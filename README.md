@@ -15,11 +15,11 @@
 > 
 https://github.com/user-attachments/assets/655d7b8f-3bfb-4706-a831-1d7bde9f2ce3
 
+3.  모임 참석/취소 : 생성된 모임에 참석/참석취소 가 가능합니다.
+>
+https://github.com/user-attachments/assets/e9dc5018-6db7-47ae-9bc4-fcc19a1fd790
 
 
-
-  
-4.  모임 참석/취소 : 생성된 모임에 참석/참석취소 가 가능합니다.
 
 5.  마음에 드는 전시 찜 하기 기능 : 마음에 드는 전시 를 추가, 제거 할수있습니다. 
 
