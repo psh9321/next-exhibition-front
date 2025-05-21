@@ -8,16 +8,16 @@
 - 상태 관리 : react-query, zustand
 - 스타일링 : CSS Modules (*.module.css)
 - 언어 : TypeScript
-
+---
 ## 아키텍처 및 전략
 - SSR(서버 사이드 렌더링) + CSR(클라이언트 사이드 렌더링) 혼합 구조
 - React Query 기반 캐싱 전략 적용 (서버 상태 관리 최적화)
 - 서버 상태는 React Query, 클라이언트 상태는 Zustand로 분리 관리
-
+---
 ## 주요 특징 
 - 반응형 웹
 - 컴포넌트 기반 설계
-
+---
 ## 웹의 기능
 1.  로그인, 회원가입, 아이디찾기, 비밀번호 찾기
 
