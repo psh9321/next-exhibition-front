@@ -1,0 +1,374 @@
+#myInfoSetting {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 5;
+}
+
+#myInfoSetting .inner {
+    position: absolute;
+    top: 60px;
+    left: 260px;
+    width: 300px;
+    display: block;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#myInfoSetting.dark .inner {
+    color: #666666;
+    background-color: #18181b;
+    /* border: 1px solid #666666; */
+}
+
+#myInfoSetting .inner:before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -40px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px;
+    border-color: transparent #fff transparent transparent;
+}
+
+#myInfoSetting.dark .inner:before {
+    border-color: transparent #18181b transparent transparent;
+}
+
+#myInfoSetting .inner .btnUtilList {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;}
+
+#myInfoSetting .inner .btnUtilList li:nth-child(n+2) {
+    margin-left: 10px;
+}
+
+#myInfoSetting .inner .btnUtilList li > button {
+    font-size: 1.4rem;    
+    text-decoration: underline;
+}
+
+#myInfoSetting .beforeLogin {
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    
+}
+
+#myInfoSetting .beforeLogin .accountList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #888;
+    font-size: 1rem;
+    text-align: right;
+}
+
+#myInfoSetting .beforeLogin .accountList li:nth-child(n+2) {
+    position: relative;
+    margin-left: 15px;
+}
+
+#myInfoSetting .beforeLogin .accountList li:nth-child(n+2):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -7.5px;
+    transform: translateY(-50%);
+    display: block;
+    width: 2px;
+    height: calc(100% - 4px);
+    background-color: #888;
+}
+
+#myInfoSetting .beforeLogin .accountList li a {
+    position: relative;
+    font-size: 1.2rem;
+}
+
+#myInfoSetting .beforeLogin .btnLogin {
+    display: inline-block;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #fff;
+    background-color: #3C00EE;
+    border-radius: 5px;
+}
+
+#myInfoSetting .afterLogin {
+    padding: 40px 40px 100px 40px;
+}
+
+#myInfoSetting .afterLogin h3 {
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#myInfoSetting .afterLogin dl dt {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+}
+
+#myInfoSetting .afterLogin dl dt .imgBox {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #000;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#myInfoSetting.dark .afterLogin dl dt .imgBox {
+    border-color: #666666;
+}
+
+#myInfoSetting .afterLogin dl dt .imgBox svg {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+#myInfoSetting.dark .afterLogin dl dt .imgBox svg {
+    background-color: #18181b;
+}
+
+#myInfoSetting .afterLogin dl dt .imgBox .emptyProfileImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+#myInfoSetting .afterLogin dl dt .btnList {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    display: flex;
+}
+
+#myInfoSetting .afterLogin dl dt .btnList li:nth-child(n+2) {
+    margin-left: 5px;
+}
+
+#myInfoSetting .afterLogin dl dt .btnList li label,
+#myInfoSetting .afterLogin dl dt .btnList li button {
+    display: inline-block;
+    cursor: pointer;    
+}
+
+#myInfoSetting .afterLogin dl dt > svg {
+    margin-left: 10px;
+}
+
+#myInfoSetting .afterLogin dl dd {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+#myInfoSetting .afterLogin dl dd span {
+    width: 65px;
+    margin-right: 10px;
+}
+
+#myInfoSetting .afterLogin dl dd input {
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 1.8rem;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+#myInfoSetting.dark .afterLogin dl dd input {
+    color: #666666;
+    background-color: #18181b;
+    border-bottom-color: #666666;
+}
+
+#myInfoSetting .afterLogin dl dd input::placeholder {
+    font-size: 1.3rem;
+}
+
+#myInfoSetting .afterLogin dl dd > button {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 0 10px;
+    height: 35px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#myInfoSetting .afterLogin dl dd .selectBox > button {
+    width: 90px;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+}
+
+#myInfoSetting.dark .afterLogin dl dd .selectBox > button {
+    border-bottom-color: #666666;
+}
+
+#myInfoSetting .afterLogin dl dd .selectBox .selectList {
+    top: 35px;
+    width: 90px;
+    height: 120px;
+}
+
+#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList {
+    top: 35px;
+    width: 90px;
+    height: 120px;
+    background-color: #18181b;
+}
+
+#myInfoSetting .afterLogin dl dd .selectBox .selectList li button {
+    margin: 5px 0;
+
+}
+
+#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList li button svg {
+    stroke: #666666;
+}
+
+#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList::-webkit-scrollbar-thumb {
+    background-color: #666666;
+}
+
+#myInfoSetting .afterLogin .utilBox {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#myInfoSetting .afterLogin .utilBox h3 {
+    display: block;
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 1rem;
+}
+
+#myInfoSetting .afterLogin .utilBox ul {
+    display: flex;
+    justify-content: flex-end;
+    color: #000; 
+}
+
+#myInfoSetting.dark .afterLogin .utilBox ul {
+    color: #666666;
+}
+
+#myInfoSetting .afterLogin .utilBox ul li.date {
+    width: 100%;
+}
+
+#myInfoSetting .afterLogin .utilBox ul li:nth-child(n+2) {
+    margin-left: 10px;
+}
+
+#myInfoSetting .afterLogin .utilBox ul li button {
+    font-size: 1.4rem;
+}
+
+#myInfoSetting .afterLogin .utilBox ul li button:hover {
+    text-decoration: underline;
+}
+
+#myInfoSetting .profileImgLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+#myInfoSetting .profileImgLayer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#myInfoSetting .profileImgLayer ul li button {
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+#myInfoSetting .profileImgLayer .defaultProfileImg {
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media all and (max-width : 860px) {
+    #myInfoSetting .inner {
+        top: unset;
+        left: unset;
+        right: calc(50% - 225px);
+        bottom: 120px;
+    }
+
+    #myInfoSetting .inner:before {
+        top: unset;
+        left: unset;
+        bottom: -40px;
+        right: 100px;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    #myInfoSetting.dark .inner:before {
+        border-color: #18181b transparent transparent transparent;
+    }
+
+    #myInfoSetting.side {
+        display: none;
+    } 
+}
+
+@media all and (max-width : 499px) {
+    #myInfoSetting .inner {
+        right: unset;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 20px);
+        /* height: 450px; */
+    }
+
+    #myInfoSetting .inner:before {
+        right: unset;
+        left: calc(100% - 28%);
+        
+    }
+}

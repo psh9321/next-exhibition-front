@@ -1,0 +1,309 @@
+.exhibitionListSingle,
+.exhibitionListDual {
+    height: calc(100% - 50px);    
+    overflow-y: auto;
+}
+
+.exhibitionListSingle.searchResult,
+.exhibitionListDual.searchResult {
+    height: calc(100% - 170px);
+}
+
+.exhibitionListSingle::-webkit-scrollbar,
+.exhibitionListDual::-webkit-scrollbar {
+    width: 10px;
+}
+
+.exhibitionListSingle::-webkit-scrollbar-thumb,
+.exhibitionListDual::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.exhibitionListSingle {
+    width: 100%;
+}
+
+.exhibitionListDual {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.exhibitionListSingle li {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 600px;
+    margin: 15px auto 0;
+}
+
+.exhibitionListDual li {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: calc(50% - 20px);
+    height: 550px;
+    margin: 10px;
+}
+
+.exhibitionListSingle li a,
+.exhibitionListDual li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.infoBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 10px;
+}
+
+.infoBox .btnFavorite {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+}
+
+.infoBox .btnFavorite svg {
+    width: 35px;
+    height: 35px;
+}
+
+/* .infoBox .btnFavorite.active svg{
+    fill: rgb(245, 49, 49);
+} */
+
+.infoBox dl {
+    padding: 0 30px 30px 30px;
+    
+}
+
+.infoBox dl dt {
+    line-height: 1.4;
+    margin-bottom: 25px;
+    font-size: 2.6rem;
+    word-break: keep-all;
+}
+
+.infoBox dl dd {
+    font-size: 1.8rem;
+}
+
+.infoBox dl dd:nth-child(n+2) {
+    margin-top: 10px;
+}
+
+.exhibitionListSingle li.moreBox,
+.exhibitionListDual li.moreBox {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 50px !important;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.exhibitionListSingle li.moreBox .btnMore,
+.exhibitionListDual li.moreBox .btnMore {
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 2.2rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.exhibitionListSingle li.moreBox .btnMore:before,
+.exhibitionListDual li.moreBox .btnMore:before {
+    content: "+";
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 2.6rem;
+}
+
+.exhibitionListSingle li.searchEmpty,
+.exhibitionListDual li.searchEmpty {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto !important;
+    margin: 0;
+}
+.exhibitionListDual li.searchEmpty dl,
+.exhibitionListSingle li.searchEmpty dl {
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.exhibitionListDual li.searchEmpty dl dt,
+.exhibitionListSingle li.searchEmpty dl dt {
+    margin-bottom: 15px;
+}
+
+.exhibitionListDual li.searchEmpty dl dd,
+.exhibitionListSingle li.searchEmpty dl dd {
+    color: #888;
+}
+
+.exhibitionListDual li.searchEmpty dl dd a,
+.exhibitionListSingle li.searchEmpty dl dd a  {
+    display: inline-block;
+    margin-top: 30px;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    color: #000;
+    font-size: 1.8rem;
+    border: 1px solid #000;
+}
+
+@media all and (max-width : 1495px) {
+    .exhibitionListDual,
+    .exhibitionListSingle {
+        width: 900px;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width : 1170px) {
+    .exhibitionListDual,
+    .exhibitionListSingle {
+        width: 700px;
+    }
+
+    .exhibitionListDual li {
+        height: 450px;
+    }
+
+    .exhibitionListDual .infoBox dl dt {
+        font-size: 2rem;
+    }
+
+    .exhibitionListDual .infoBox dl dd {
+        font-size: 1.4rem;
+    }
+}
+
+@media all and (max-width : 960px) {
+    
+    .exhibitionListDual,
+    .exhibitionListSingle {
+        width: 100%;
+    }
+
+    .exhibitionListDual li > a {
+        width: calc(100% - 10%);
+    }
+}
+
+@media all and (max-width : 860px) {
+    .exhibitionListDual,
+    .exhibitionListSingle {
+        padding: 0 20px;
+    }
+}
+
+@media all and (max-width : 670px) {
+
+    .exhibitionListDual li {
+        height: 55vw;
+    }
+
+    .exhibitionListDual li .infoBox dl dt {
+        font-size: 2.6vw;
+    }
+
+    .exhibitionListDual li .infoBox dl dd {
+        font-size: 2vw;
+    }
+}
+
+@media all and (max-width : 600px) {
+
+    .exhibitionListSingle li {
+        width: 400px;
+        height: 500px;
+    }
+
+    .exhibitionListDual li .infoBox dl {
+        padding: 0 20px 30px 20px;
+    }
+
+    .exhibitionListSingle li .infoBox dl dt {
+        font-size: 1.8rem;
+    }
+
+    .exhibitionListSingle li .infoBox dl dd {
+        font-size: 1.2rem;
+    } 
+
+    .exhibitionListDual li.searchEmpty dl,
+    .exhibitionListSingle li.searchEmpty dl {
+        font-size: 1.6rem;
+    }
+    
+    .exhibitionListDual li.searchEmpty dl dd a,
+    .exhibitionListSingle li.searchEmpty dl dd a {
+        /* font-size: 1.2rem; */
+    }
+}
+
+@media all and (max-width : 499px) {
+
+    .infoBox .btnFavorite {
+        top: 10px;
+        right: 10px;
+    }
+
+    .exhibitionListSingle li {
+        width: 100%;
+        height: 450px;
+    }
+
+    .exhibitionListDual li .infoBox dl {
+        padding: 0 10px 20px 10px;
+    }
+
+    .exhibitionListDual li .infoBox dl dt {
+        margin-bottom: 15px;
+    }
+
+    .exhibitionListDual li .infoBox dl dd:nth-child(n+2) {
+        margin-top: 5px;
+    }
+    
+    .exhibitionListDual li .infoBox dl dt {
+        font-size: 1rem;
+    }
+
+    .exhibitionListDual li .infoBox dl dd {
+        font-size: 0.8rem;
+    } 
+
+    .exhibitionListSingle li.searchEmpty dl,
+    .exhibitionListDual li.searchEmpty dl {
+        font-size: 1.5rem;
+    }
+}

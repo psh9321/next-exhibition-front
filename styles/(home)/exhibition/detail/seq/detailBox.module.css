@@ -1,0 +1,396 @@
+.detailBox {
+    position: relative;
+    padding: 10px;
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+.detailBox .imgBox {
+    display: block;
+    width: 350px;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 5px;
+
+}
+
+.detailBox .infoBox {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 0 0 30px;
+}
+
+.detailBox .infoBox > dl {
+    padding: 50px 0 0 30px;
+    font-size: 2rem;
+}
+
+.detailBox .infoBox > dl dt {
+    display: flex;
+    align-items: flex-start;
+}
+
+.detailBox .infoBox > dl dt span {
+    margin-left: 10px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    word-break: keep-all;
+}
+
+.detailBox .infoBox > dl dd {
+    margin-top: 15px;
+    line-height: 1.2;
+    font-size: 1.6rem;
+    word-break: keep-all;
+}
+
+.detailBox .infoBox > dl dd.btnList {
+    display: flex;
+}
+
+.detailBox .infoBox > dl dd a {
+    color: #3C00EE;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    word-break: keep-all;
+}
+
+.detailBox .infoBox > dl dd.btnList a:nth-child(n+2) {
+    margin-left: 5px;
+}
+
+.detailBox .infoBox > dl dd.btnList a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #3C00EE;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.detailBox .infoBox > dl dd.btnList a.btnAdd {
+    color: #fff;
+    background-color: #888;
+}
+
+.detailBox .infoBox > dl .typeList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+}
+
+.detailBox .infoBox > dl .typeList li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1.4rem;
+    /* background-color: #f0f; */
+    border-radius: 10px;
+}
+
+.detailBox .infoBox > dl .typeList li {
+    color: #fff;
+}
+
+.freePrice { background-color: #87CEEB; }
+
+.theatre { background-color: #6A0DAD; }
+.exhibition { background-color: #4B0082; }
+.etc { background-color: #7F8C8D; }
+.dance { background-color: #FF6F61; }
+.music { background-color: #008080; }
+
+.Seoul { background-color: #009DDC; }
+.Gyeonggi { background-color: #7EBA43; }
+.Sejong { background-color: #4169E1; }
+.Daejeon { background-color: #FFD400; }
+.Daegu { background-color: #EF426F; }
+.Busan { background-color: #0078C3; }
+.Gwangju { background-color: #9B59B6; }
+.Jeju { background-color: #FF7F00; }
+.Gangwon { background-color: #3CB371; }
+.Gyungnam { background-color: #2E8B57; }
+.Gyungbok { background-color: #DAA520; }
+.Ulsan { background-color: #4682B4; }
+.Incheon { background-color: #00BFFF; }
+.Jeonnam { background-color: #228B22; }
+.Jeonbok { background-color: #32CD32; }
+.Chungnam { background-color: #8B4513; }
+.Chungbuk { background-color: #556B2F; }
+
+.detailBox .mapBox h3 {
+    display: inline-flex;
+    align-items: center;
+    margin: 40px 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.detailBox .mapBox h3 svg {
+    margin-right: 5px;
+}
+
+.detailBox .map {
+    width: 100%;
+    height: 400px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+.meetingBox {
+    display: block;
+    width: 100%;
+}
+
+.meetingBox h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 50px 0 20px 0;
+    font-size: 1.8rem;
+}
+
+.meetingBox h3 a {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px 20px;
+    /* font-size: 1.6rem; */
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.meetingBox table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 1.6rem;
+    table-layout: fixed;
+}
+
+.meetingBox table thead {
+    border-bottom: 1px solid #888;
+}
+
+.meetingBox table tbody td {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+
+.meetingBox table tbody td:nth-child(n+2):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 15px;
+    background-color: #888;
+    border-radius: 20px;
+}
+
+.meetingBox table .title {
+    width: 250px;
+    text-align: center;
+}
+
+.meetingBox table .title a {
+    display: inline-block;
+    max-width: calc(100% - 10%);
+    color: #3C00EE;
+    text-decoration: underline;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.meetingBox table .member {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.meetingBox table .date {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+.meetingBox table tbody .empty td {
+    text-align: center;
+    padding-top: 40px;
+}
+@media all and (max-width : 1495px) {
+    .detailBox {
+        justify-content: center;
+    }
+}
+
+@media all and (max-width : 1250px) {
+    .detailBox .imgBox {
+        height: 350px;
+    }
+
+    .meetingBox table {
+        font-size: 1.4rem;
+    }
+}
+
+@media all and (max-width : 1000px) {
+    .detailBox .imgBox {
+        height: 290px;
+    }
+
+    .meetingBox table {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width : 860px) {
+    .detailBox {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .detailBox .imgBox {
+        width: 300px;
+        height: 400px;
+    }
+
+    .detailBox .infoBox {
+        width: 100%;
+        padding: 0;
+    }
+
+    .detailBox .infoBox dl {
+        font-size: 2.6rem;
+    }
+
+    .meetingBox table {
+        font-size: 1.3rem;
+    }
+
+    .meetingBox table .title {
+        width: 190px;
+    }
+
+}
+
+@media all and (max-width : 690px) {
+
+    .detailBox .infoBox dl {
+        padding: 30px 0 0 20px;
+    }
+
+    .detailBox .imgBox {
+        width: 350px;
+        height: 350px;
+    }
+
+    .meetingBox table {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media all and (max-width : 600px) {
+
+    .detailBox .imgBox {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .detailBox .infoBox > dl {
+        left: 280px;
+        font-size: 1.6rem;
+    }
+
+    .detailBox .infoBox > dl dd {
+        font-size: 1.2rem;
+    }
+
+    .detailBox .infoBox > dl a {
+        font-size: 1.2rem;
+    }
+
+    .meetingBox table {
+        font-size:1rem;
+    }
+
+    .meetingBox table .title {
+        width: 150px;
+    }
+
+}
+
+@media all and (max-width : 499px) {
+    .detailBox .imgBox {
+        /* width: 180px;
+        height: 280px; */
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .detailBox .infoBox > dl {
+        top: 30px;
+        left: 200px;
+        font-size: 1.2rem;
+    }
+
+    .detailBox .infoBox > dl dd {
+        margin-top: 8px;
+        font-size: 1rem;
+    }
+
+    .detailBox .infoBox > dl a {
+        font-size: inherit;
+    }
+
+    .detailBox .infoBox > dl dd.btnList {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .detailBox .infoBox > dl dd.btnList a:nth-child(n+2) {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .detailBox .infoBox > dl .typeList li {
+        padding: 5px 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+    .detailBox .mapBox h3 {
+        margin-top: 60px;
+        font-size: 1.2rem;
+    }
+
+    .detailBox .infoBox > dl dd a {
+        font-size: 1rem;
+    }
+
+    .meetingBox h3 {
+        font-size: 1.2rem;
+    }
+
+    .meetingBox table {
+        font-size: 0.8rem;
+    }
+
+    .meetingBox table .title {
+        width: 33%;
+    }
+
+    .meetingBox table .member {
+        width: 33%;
+    }
+    .meetingBox table .date {
+        width: 33%;
+    }
+}

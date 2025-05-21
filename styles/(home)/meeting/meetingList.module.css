@@ -1,0 +1,278 @@
+.meetingList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+}
+
+.meetingList > li {
+    position: relative;
+    display: block;
+    width: calc(33.33% - 20px);
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.meetingList > li.empty {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX( -50%);
+    display: block;
+    width: 350px;
+    height: 350px;
+    margin: 0;
+    text-align: center;
+}
+
+.meetingList > li.empty dl dd a {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.meetingList > li.empty dl dd a:before,
+.meetingList > li.empty dl dd a:after {
+    display: none;
+}
+
+/* .meetingList > li.empty dl  */
+
+.meetingList > li a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.meetingList > li a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    transition: 0.25s ease;
+    opacity: 0;
+    z-index: 2;
+}
+
+.meetingList > li a:after {
+    content: "모임 더보기";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 1.4rem;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.25s ease;
+    pointer-events: visible;
+    z-index: 2;
+}
+
+.meetingList > li a:hover:before,
+.meetingList > li a:hover:after {
+    opacity: 1;
+}
+
+.meetingList > li .createrBox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: 90% 90%;
+    background-position: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.meetingList > li .createrBox svg {
+    width: 100%;
+    height: 100%;
+}
+
+.meetingList > li .imgBox {
+    display: block;
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.meetingList > li dl {
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.meetingList > li dl dt {
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+
+.meetingList > li dl dd:nth-child(n+2) {
+    margin-top: 10px;
+}
+
+.meetingList > li dl dd span {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.meetingList > li dl dd span:nth-child(n+2) {
+    margin-left: 5px;
+}
+
+.meetingList > li.promiseEmpty {
+    position: absolute;
+    top: 20%;
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    /* left: 50%;
+    transform: translateX(-50%); */
+}
+
+.promiseEmpty dl {
+    font-size: 2.6rem;
+}
+
+.promiseEmpty dl dd {
+    color: #888;
+}
+
+.promiseEmpty ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.promiseEmpty ul li:nth-child(n+2) {
+    margin-left: 10px;
+}
+
+.promiseEmpty ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 1.6rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.promiseEmpty ul li a:before { display: none; }
+.promiseEmpty ul li a:after { display: none; }
+
+.freePrice { background-color: #87CEEB; }
+
+.theatre { background-color: #6A0DAD; }
+.exhibition { background-color: #4B0082; }
+.etc { background-color: #7F8C8D; }
+.dance { background-color: #FF6F61; }
+.music { background-color: #008080; }
+
+.Seoul { background-color: #009DDC; }
+.Gyeonggi { background-color: #7EBA43; }
+.Sejong { background-color: #4169E1; }
+.Daejeon { background-color: #FFD400; }
+.Daegu { background-color: #EF426F; }
+.Busan { background-color: #0078C3; }
+.Gwangju { background-color: #9B59B6; }
+.Jeju { background-color: #FF7F00; }
+.Gangwon { background-color: #3CB371; }
+.Gyungnam { background-color: #2E8B57; }
+.Gyungbok { background-color: #DAA520; }
+.Ulsan { background-color: #4682B4; }
+.Incheon { background-color: #00BFFF; }
+.Jeonnam { background-color: #228B22; }
+.Jeonbok { background-color: #32CD32; }
+.Chungnam { background-color: #8B4513; }
+.Chungbuk { background-color: #556B2F; }
+
+@media all and (max-width : 1300px) {
+    .meetingList > li a {
+        pointer-events: visible;
+    }
+    
+    .meetingList > li:hover a:before,
+    .meetingList > li:hover a:after {
+        display: none;
+    }
+}
+
+@media all and (max-width : 1070px) {
+    .meetingList > li .imgBox {
+        height: 280px;
+    }
+}
+
+@media all and (max-width : 920px) {
+    .meetingList > li {
+        width: calc(50% - 20px);
+    }
+
+    .meetingList > li .imgBox {
+        height: 400px;
+    }
+}
+
+@media all and (max-width : 650px) {
+    .meetingList > li .imgBox {
+        height: 55vw;
+    }
+
+    .meetingList > li dl dt {
+        font-size: 1.4rem;
+    }
+
+    .meetingList > li dl dd {
+        font-size: 1.2rem;
+    }
+
+    .meetingList > li.empty dl dt,
+    .meetingList > li.promiseEmpty dl dt {
+        font-size: 1.6rem;
+    }
+
+    .meetingList > li.empty dl dd,
+    .meetingList > li.promiseEmpty dl dd {
+        font-size: 1.2rem;
+    }
+
+    .meetingList > li.empty dl dd a {
+        width: 250px;
+    }
+}
+
+@media all and (max-width : 499px) {
+    .meetingList > li dl dt {
+        font-size: 1rem;
+    }
+
+    .meetingList > li dl dd {
+        font-size: 0.8rem;
+    }
+}

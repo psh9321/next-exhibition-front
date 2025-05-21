@@ -1,0 +1,288 @@
+.addBox {
+    position: relative;
+    height: calc(100% - 50px);
+    padding: 20px 10px;
+    overflow-y: auto;
+}
+
+.addBox h3 {
+    margin-bottom: 15px;
+    color: #888;
+    font-size: 2rem;
+}
+
+.addBox h3 a {
+    text-decoration: underline;
+}
+
+.addBox .addGatheringForm .formList > li {
+    display: flex;
+    align-items: center;
+}
+
+.addBox .addGatheringForm .formList > li label {
+    margin-right: 5px;
+    font-size: 1.8rem;
+}
+
+.addBox .addGatheringForm .formList > li:nth-child(n+2) {
+    margin-top: 30px;
+} 
+
+.addBox .addGatheringForm .formList > li {
+    position: relative;
+}
+
+.addBox .addGatheringForm .formList > li label:after {
+    content: ":";
+    margin-left: 5px;
+}
+
+.addBox .addGatheringForm .formList > li input[type=number],
+.addBox .addGatheringForm .formList > li input[type=date] {
+    width: 170px;
+    height: 30px;
+    padding: 0 5px;
+    font-size: 1.6rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.addBox .addGatheringForm .formList > li input[type=number] {
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+}
+
+.addBox .addGatheringForm .formList > li input[type=text] {
+    display: block;
+    width: 350px;
+    padding: 10px 5px;
+    font-size: 1.6rem;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius:0;
+}
+
+.addBox .addGatheringForm .formList > li .userBox {
+    margin-left: 15px;
+}
+
+.addBox .addGatheringForm .formList > li .userBox dt {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.addBox .addGatheringForm .formList > li .userList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.addBox .addGatheringForm .formList > li .userList li {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.addBox .addGatheringForm .formList > li .userList li.profileImgNull {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p {
+    position: absolute;
+    top : -50px;
+    left: -50px;
+    width: 140px;
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #000;
+    background-color: #c1c1c1;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 55px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #c1c1c1 transparent transparent transparent;
+    z-index: 1;
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p span {
+    font-size: 1.3rem;   
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p a {
+    position: absolute;
+    top: -24px;
+    left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #000;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.addBox .addGatheringForm .formList > li .userList li > p a svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+}
+
+/* .addBox .addGatheringForm .formList > li .userList li dl dd {
+    font-size: 1.3rem;
+} */
+
+.addBox .addGatheringForm .formList .textContents {
+    /* background-color: #f0f;     */
+    width: 500px;
+}
+
+.addBox .addGatheringForm .formList > li .textContents > div {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.addBox .addGatheringForm .formList > li .textContents > div:last-child > div {
+    min-height: 200px;
+    font-size: 1.4rem;
+}
+
+.addBox .addGatheringForm .formList > li .textContents > div:last-child > div:before {
+    font-size: 1.6rem;
+}
+
+.addBox .addGatheringForm .formList > li .textContents > div:last-child > div > p img {
+    width: 150px;
+}
+
+.addBox .addGatheringForm .formList .textContents.readonly {
+    pointer-events: none;
+}
+
+.addBox .addGatheringForm .formList .textContents.readonly > div:first-child {
+    opacity: 0;  
+}
+
+.addBox .addGatheringForm .formList .textContents.readonly > div:last-child {
+    border-top: 1px solid #000;
+}
+
+.addBox .addGatheringForm .btnList {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.addBox .addGatheringForm .btnList li:nth-child(n+2) {
+    margin-left: 15px;
+}
+
+.addBox .addGatheringForm .btnList li a,
+.addBox .addGatheringForm .btnList li button {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 2rem;
+    font-weight: 500;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.errorMsg {
+    position: absolute;
+    bottom: -25px;
+    left: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.2rem;
+    color: rgb(205, 63, 63);
+    white-space: nowrap;
+}
+
+@media all and (max-width:1050px) {
+    .addBox .imgBox {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media all and (max-width:499px) {
+
+    .addBox .imgBox {
+        width: 100px;
+        height: 150px;
+    } 
+
+    .addBox .addGatheringForm .formList > li {
+        flex-wrap: wrap;
+    }
+
+    .addBox .addGatheringForm .formList > li:nth-child(n+2) {
+        margin-top: 10px;
+    }
+
+    .addBox .addGatheringForm .formList > li label {
+        font-size: 1.2rem;
+    }
+
+    .addBox .addGatheringForm .formList > li input[type=number] {
+        height: 25px;
+    }
+
+    .addBox .addGatheringForm .formList > li input[type=date] {
+        width: 130px;
+        height: 25px;
+        font-size: 1.2rem;
+    }
+
+    .addBox .addGatheringForm .formList > li input[type=text] {
+        width: 100%;
+    }
+
+    .addBox .addGatheringForm .formList > li .userBox {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+
+    }
+}

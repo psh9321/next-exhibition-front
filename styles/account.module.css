@@ -1,0 +1,601 @@
+#account {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 450px;
+    height: 500px;
+    min-height: 450px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+/* logo */
+#account .logo {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+#account .logo span {
+    font-size: 1.6rem;
+}
+
+#account .btnNaviHome {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    outline: none;
+    display: block;
+}
+
+/* input list */
+.inputList {
+    width: 250px;
+    margin: 0 auto;
+}
+
+
+.inputList > li {
+    position: relative;
+}
+
+.inputList > li > label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.inputList > li > input {
+    display: block;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.inputList > li:nth-child(n+2) {
+    margin-top: 30px;
+}
+
+.inputList > li > .toggleBox {
+    position: absolute;
+    bottom: 5px;
+    left: 255px;
+    display: inline-block;
+    
+}
+
+.inputList > li > .toggleBox label,
+.inputList > li > .toggleBox label img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* button[type=button] */
+.submitBox {
+    display: block;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.submitBox a,
+.submitBox button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 2rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+/* 에러메세지 */
+.inputList li .errorMsg {
+    position: absolute;
+    bottom: -25px;
+    left: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.2rem;
+    color: rgb(205, 63, 63);
+    white-space: nowrap;
+}
+
+/* 회원가입 뒤로가기 버튼 */
+#account .btnBack {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#account .btnBack svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* util menu */
+#account .accountUtilMenu {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#account .accountUtilMenu li:nth-child(n+2) {
+    margin-left: 30px;
+}
+
+#account .accountUtilMenu li {
+    position: relative;
+}
+
+#account .accountUtilMenu li:nth-child(n+2):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    display: block;
+    width: 2px;
+    height: 70%;
+    background-color: #000;
+}
+
+#account .accountUtilMenu li a {
+    display: inline-block;
+    font-size: 1.4rem;
+}
+
+/* 회원가입 */
+
+#account .register {
+    overflow: hidden;
+}
+
+#account .register .registerSlideWrapper {
+    position: relative;    
+    display: flex;
+    width: 100%;
+    transition: 0.25s ease-in-out;
+}
+
+#account .registerSlideWrapper .registerSlide {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+#account .registerSlideWrapper .inputList label {
+    font-size: 1.4rem;
+}
+
+#account .registerNav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    user-select: none;
+}
+
+#account .registerNav li {
+    font-size: 1.6rem;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+
+#account .registerNav li:nth-child(n+2) {
+    position: relative;
+    margin-left: 25px;
+}
+
+#account .registerNav li:nth-child(n+2):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    display: block;
+    width: calc(100% - 5px);
+    height: 2px;
+    background-color: #000;
+}
+
+/* #account .registerNav li button {
+    font-size: 2rem;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 100%;
+} */
+
+#account .registerNav li.active {
+    color: #fff;
+    background-color: #000;
+}
+
+#account .btnList {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 30px auto 0;
+}
+
+#account .btnList li > button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#account .btnList li > button.disable {
+    background-color: rgba(0,0,0,0.5);
+    cursor: default;
+}
+
+#account .btnList li .infoMsg {
+    position: absolute;
+    font-size: 1.4rem;
+}
+
+#account .registerSlideWrapper .registerSlide.email {
+    margin-top: 60px;
+}
+
+#account .registerSlideWrapper .registerSlide.phone {
+    margin-top: 100px;
+}
+
+#account .registerSlideWrapper .registerSlide.phone .inputList li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#account .registerSlideWrapper .registerSlide.phone .inputList li label {
+    order: 1;
+    width: 100%;
+}
+
+#account .registerSlideWrapper .registerSlide.phone .inputList li .selectBox {
+    order: 2;
+    width: 100px;
+}
+
+#account .registerSlideWrapper .registerSlide.phone .inputList li .selectBox button {
+    height: 40px;
+}
+
+#account .registerSlideWrapper .registerSlide.phone .inputList input {
+    order: 3;
+    width: 140px;
+}
+
+#account .registerSlideWrapper .registerSlide.pw {
+    margin-top: 70px;
+}
+
+#account .registerSlideWrapper .registerSlide.info {
+    margin-top: 50px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li:nth-child(2) {
+    margin-top: 0;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.name input {
+    width: 120px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.nickName input {
+    width: 110px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.birth input {
+    width: 110px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.area {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    width: 110px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.area .selectBox {
+    width: 100%;
+    height: 40px;
+    font-size: 1.6rem;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.area .selectBox > button {
+    height: 40px;
+    font-size: 1.4rem;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.area .selectBox .selectList {
+    top: 55px;
+    height: 100px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.area .selectBox .selectList button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.gender {
+    display: flex;
+    align-items: flex-end;
+    /* width: 110px; */
+    /* margin-top: 10px; */
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.gender .checkBox {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.gender .checkBox.active {
+    color: #fff;
+    background-color: #000;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.gender .checkBox label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.gender .checkBox:last-child {
+    margin-left: 5px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList {
+    /* width: 100%; */
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label p {
+    font-size: 1.2rem;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label span {
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label.active {
+    position: relative;
+    color: #3061c4;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label.active p {
+    position: relative;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label.active p:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #3061c4;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li label.active svg {
+    stroke: #3061c4;
+}
+
+#account .registerSlideWrapper .registerSlide.info .inputList li.checkList .checkBoxList li:nth-child(n+2) {
+    margin-top: 15px;
+}
+
+#account .registerSlideWrapper .registerSlide.info .submitBox {
+    margin-top: 40px;
+}
+
+/* id 찾기 */
+#account .idSearch .searchResultBox {
+    display: block;    
+    margin-top: 100px;
+    text-align: center;
+}
+
+#account .idSearch .searchResultBox dt {
+    font-size: 1.6rem;
+}
+
+#account .idSearch .searchResultBox .id {
+    display: block;
+    margin: 50px 0 15px;
+    font-size: 1.8rem;
+}
+
+#account .idSearch .searchResultBox .date {
+    font-size: 1.2rem;
+}
+
+/* 비밀번호 찾기 */
+#account .pwSearch .pwChangeForm {
+    margin-top: 70px;
+}
+
+/*  */
+#account .login {
+    padding-top: 60px;
+}
+
+#account .login .inputList {
+    margin-top: 40px;
+}
+
+#account .register,
+#account .pwSearch,
+#account .idSearch {
+    padding-top: 30px;
+}
+
+#account .idSearch .inputList {
+    margin-top: 70px;
+}
+
+#account .pwSearch .inputList {
+    margin-top: 20px;
+}
+
+.readDisable {
+    background-color: rgba(0,0,0,0.2);
+    border-color: rgba(0,0,0,0.2);
+    cursor: default;
+}
+
+
+@media all and (max-width : 450px) {
+    #account {
+        width: calc(100% - 20px);
+    }
+
+    .inputList {
+        width: 200px;
+    }
+
+    .inputList > li > label {
+        font-size: 1.4rem;
+    }
+
+    .inputList > li > .toggleBox {
+        left: 210px;
+    }
+    
+    .inputList > li > input {
+        display: block;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+
+    #account .accountUtilMenu li a {
+        display: inline-block;
+        font-size: 1.2rem;
+    }
+
+    #account .btnList {
+        width: 200px;
+    }
+
+    #account .registerSlideWrapper .inputList label {
+        font-size: 1.2rem;
+    }
+
+    #account .registerSlideWrapper .registerSlide.phone .inputList li .selectBox {
+        width: 85px;
+    }
+
+    #account .registerSlideWrapper .registerSlide.phone .inputList li .selectBox > button {
+        font-size: 1.4rem;
+    }
+
+    #account .registerSlideWrapper .registerSlide.phone .inputList input {
+        width: 100px;
+        font-size: 1.2rem;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .inputList li input::placeholder {
+        font-size: 1rem;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .inputList li.name input {
+        width: 100px;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .inputList li.nickName input {
+        width: 90px;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .inputList li.birth input {
+        width: 90px;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .inputList li.area {
+        width: 100px;
+    }
+
+    #account .registerSlideWrapper .inputList > li:nth-child(n+2) {
+        margin-top: 15px;
+    }
+
+    #account .registerSlideWrapper .registerSlide.info .submitBox {
+        margin-top: 30px;
+    }
+
+    .submitBox a,
+    .submitBox button {
+        padding: 10px 20px;
+        font-size: 1.6rem;
+    }
+
+    #account .idSearch .searchResultBox dt {
+        font-size: 1.4rem;
+    }
+    
+    #account .idSearch .searchResultBox .id {
+        display: block;
+        margin: 50px 0 15px;
+        font-size: 1.6rem;
+    }
+
+    #account .idSearch .searchResultBox .date {
+        font-size: 1rem;
+    }
+    
+}

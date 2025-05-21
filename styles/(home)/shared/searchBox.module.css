@@ -1,0 +1,364 @@
+.searchBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2;
+}
+
+.searchBox .inner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1000px;
+    padding: 80px 20px;
+    background-color: #fff;
+    border-radius:  0 0 10px 10px;
+}
+
+.searchBox.dark .inner {
+    color: #666666;
+    background-color: #18181b;
+}
+
+.searchBox .inner.show {
+    animation: 0.45s ease-in-out TopFadeIn forwards
+}
+
+.searchBox .inner.hide {
+    animation: 0.45s ease-in-out TopfadeOut forwards;
+    
+}
+
+.searchBox .inner .searchForm .searchFormList > li .selectBox button {
+    height: 35px;
+}
+
+.searchFormList > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchFormList > li:nth-child(n+2) {
+    margin-top: 35px;
+}
+
+.searchFormList > li h3,
+.searchFormList > li label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    font-size: 1.6rem;
+}
+
+.searchFormList > li input[type=text] {
+    width: 354px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    border: 1px solid #000;
+}
+
+.searchBox.dark .searchFormList > li input[type=text] {
+    color: #666666;
+    background-color: #18181b;
+    border-color: #666666;
+}
+
+.searchFormList > li .errorMsg {
+    position: absolute;
+    bottom: -25px;
+    left: 165px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.2rem;
+    color: rgb(205, 63, 63);
+    white-space: nowrap;
+}
+
+.searchFormList > li .btnSelect {
+    height: 35px;
+}
+
+.searchBox.dark .searchFormList > li .btnSelect {
+    border-color: #666666;
+}
+
+.searchFormList > li .selectBox .selectList {
+    top: 45px;
+    background-color: #18181b;
+}
+
+.searchFormList > li .dateInputBox {
+    display: flex;
+    align-items: center;
+}
+
+.searchFormList > li .dateInputBox span {
+    display: block;
+    width: 14px;
+    margin: 0 10px;
+    font-size: 2.4rem;
+}
+
+.searchFormList > li .dateInputBox input[type=date] {
+    width: 160px;
+    height: 35px;
+    padding: 0 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.searchBox.dark .searchFormList > li .dateInputBox input[type=date] {
+    color: #666666;
+    background-color: #18181b;
+    border-color: #666666;
+}
+
+.searchForm button[type=submit] {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 40px;
+    font-size: 1.6rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.searchBox.dark .searchForm button[type=submit] {
+    border-color: #666666;
+}
+
+.recentBox h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.recentBox h3 .btnAllDelete {
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
+
+.recentBox .recentList {
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    width: 350px;
+    max-height: 200px;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.searchBox.dark .recentBox .recentList {
+    border-color: #666666;
+}
+
+.recentBox .recentList::-webkit-scrollbar  {
+    width: 8px;
+}
+
+.recentBox .recentList::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.searchBox.dark .recentBox .recentList::-webkit-scrollbar-thumb {
+    background-color: #666666;
+}
+
+.recentBox .recentList li {
+    position: relative;
+    margin: 5px;
+}
+
+.recentBox .recentList li .btnKeyword {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    border: 1px solid #000;
+    word-break: break-all;
+    border-radius: 20px;
+}
+
+.recentBox .recentList li .btnDelete {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    display: block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 100%;
+    
+}
+
+.recentBox .recentList li .btnDelete span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+.recentBox .recentList li .btnDelete span:first-child {
+    transform: rotate(45deg);
+}
+
+.recentBox .recentList li .btnDelete span:last-child {
+    transform: rotate(-45deg);
+}
+
+.recentBox .recentList.empty {
+    justify-content: center;
+    align-items: center;
+    /* height: 20px; */
+}
+
+.recentBox .recentList .emptyContents {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.searchBox .inner .btnClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+}
+
+@keyframes TopFadeIn {
+    from {
+      opacity: 0;
+      top: -100%;
+      /* transform: scale(0); */
+    }
+    to {
+      opacity: 1;
+      top: 0;
+      /* transform: scale(1); */
+    }
+  }
+  
+  @keyframes TopfadeOut {
+    from {
+      opacity: 1;
+      top: 0;
+      /* transform: scale(1); */
+    }
+    to {
+      opacity: 0;
+      top: -100%;
+      /* transform: scale(0); */
+    }
+  }
+
+@media all and (max-width: 1100px) {
+    
+    .searchBox .inner {
+        width: calc(100% - 40px);
+    }
+}
+
+@media all and (max-width: 960px) {
+    .searchFormList > li h3, 
+    .searchFormList > li label {
+        width: 116px;
+        font-size: 1.4rem;
+    }
+
+    .searchFormList > li .errorMsg {
+        left: 126px;
+    }
+
+    .searchFormList > li input[type=text] {
+        width: 334px;
+    }
+
+    .searchFormList > li .dateInputBox input[type=date] {
+        width: 150px;
+        font-size: 1.4rem;
+    }
+
+    .recentBox .recentList {
+        width: 280px;
+    }
+
+    .recentBox .recentList .empty {
+        font-size: 1.2rem;
+    }
+}
+
+@media all and (max-width: 860px) {
+    .searchBox .inner {
+        flex-direction: column;
+    }
+
+    .searchForm {
+        width: 100%;
+    }
+    
+    .searchBox .recentBox {
+        margin-top: 40px;
+    }
+
+    .recentBox .recentList {
+        width: 100%;
+        border: none;
+    }
+
+    .searchForm button[type=submit] {
+        margin-top: 30px;
+    }
+}
+
+@media all and (max-width:550px) {
+    .searchBox .inner {
+        padding: 40px 20px 30px 20px;
+    }
+
+    .searchFormList > li {
+        display: block;
+    }
+
+    .searchFormList > li .errorMsg {
+        left: 0;
+    }
+
+    .searchFormList > li h3, 
+    .searchFormList > li label {
+        display: block;
+        margin-bottom: 10px;
+        width: auto;
+    }
+
+    .searchFormList > li input[type=text] {
+        width: 100%;
+    }
+
+    .searchFormList > li .dateInputBox {
+        width: 100%;
+    }
+
+    .searchFormList > li .dateInputBox input[type=date] {
+        width: calc(50% - 34px);
+    }
+}

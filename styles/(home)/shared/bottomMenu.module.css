@@ -1,0 +1,91 @@
+#bottomMenu {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    max-width: 450px;
+    width: calc(100% - 50px);
+    height: 70px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+#bottomMenu.dark {
+    background-color: #18181b;
+    border-color: #666666;
+}
+
+#bottomMenu .bottomMenuList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#bottomMenu .bottomMenuList li:nth-child(n+2) {
+    margin-left: 20px;
+}
+
+#bottomMenu .bottomMenuList li > button,
+#bottomMenu .bottomMenuList li > a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 100%;
+}
+
+#bottomMenu.dark .bottomMenuList li > button,
+#bottomMenu.dark .bottomMenuList li > a {
+    border-color: #666666;
+}
+
+#bottomMenu.dark .bottomMenuList li > button svg,
+#bottomMenu.dark .bottomMenuList li > a svg {
+    stroke: #666666;
+}
+
+#bottomMenu .bottomMenuList li > a .length {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color:#fff;
+    background-color: #000;
+    border-radius: 100%;
+    font-size: 1rem;
+    
+}
+
+#bottomMenu.dark .bottomMenuList li > a .length {
+    background-color: #666666;
+}
+
+#bottomMenu .bottomMenuList li > button.profile {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* #bottomMenu .bottomMenuList li > a .length:before {
+    content: "+";
+    position: absolute;
+    top: -10px;
+    left: -0px;
+    color: #000;
+    font-size: 1.6rem;
+} */
+
+@media all and (max-width:860px) {
+    #bottomMenu {
+        display: block;
+    }
+}
