@@ -13,7 +13,9 @@
 
 2.  모임 생성, 삭제 : 본인이 모임을 생성 하고 수정,삭제가 가능 합니다.
 >
-> ![---ezgif com-speed](https://github.com/user-attachments/assets/12543542-f116-45de-924b-cc2be85dc898)
+> https://github.com/user-attachments/assets/655d7b8f-3bfb-4706-a831-1d7bde9f2ce3
+
+
 
 
   
