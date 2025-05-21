@@ -19,10 +19,14 @@ https://github.com/user-attachments/assets/655d7b8f-3bfb-4706-a831-1d7bde9f2ce3
 >
 https://github.com/user-attachments/assets/e9dc5018-6db7-47ae-9bc4-fcc19a1fd790
 
+4.  마음에 드는 전시 찜 하기 기능 : 마음에 드는 전시 를 추가, 제거 할수있습니다. 
+> https://github.com/user-attachments/assets/399da627-2afc-4e0b-9d03-94a9a1f1ff99
+
+5. 1:1 메세지 기능
+>
+https://github.com/user-attachments/assets/9c50c4f6-2d18-4723-a705-f43ea2b82206
 
 
-5.  마음에 드는 전시 찜 하기 기능 : 마음에 드는 전시 를 추가, 제거 할수있습니다. 
-
-6. 
+ 
 
 
