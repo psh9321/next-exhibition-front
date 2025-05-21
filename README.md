@@ -12,7 +12,6 @@
 1.  로그인, 회원가입, 아이디찾기, 비밀번호 찾기
 
 2.  모임 생성, 삭제 : 본인이 모임을 생성 하고 수정,삭제가 가능 합니다.
->
 > https://github.com/user-attachments/assets/655d7b8f-3bfb-4706-a831-1d7bde9f2ce3
 
 
