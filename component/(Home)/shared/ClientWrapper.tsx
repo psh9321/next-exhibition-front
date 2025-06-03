@@ -31,6 +31,10 @@ const ClientWrapper = ({children} : LAYOUT_CHILD) => {
         SetFavoriteQuery, 
         SetPromiseQuery,
         SetMessageQuery,
+        userInfoQuery,
+        favoriteQuery,
+        promiseQuery,
+        messageQuery,
     } = useUserInfoStore();
 
     const { theme } = useThemeStore();
@@ -45,12 +49,12 @@ const ClientWrapper = ({children} : LAYOUT_CHILD) => {
     
     useLayoutEffect(() => {
         
-        if(userInfoClientQuery) SetUserInfoQuery(userInfoClientQuery);
-        if(promiseClientQuery) SetPromiseQuery(promiseClientQuery);
-        if(favoriteClientQuery) SetFavoriteQuery(favoriteClientQuery);
-        if(messageClientQuery) SetMessageQuery(messageClientQuery)
+        if(userInfoClientQuery && !userInfoQuery) SetUserInfoQuery(userInfoClientQuery);
+        if(promiseClientQuery && !promiseQuery) SetPromiseQuery(promiseClientQuery);
+        if(favoriteClientQuery && !favoriteQuery) SetFavoriteQuery(favoriteClientQuery);
+        if(messageClientQuery && !messageQuery) SetMessageQuery(messageClientQuery)
         setIsLoading(false);
-
+        
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 

@@ -40,3 +40,13 @@ export function ExhibitionDateFormat(dateStr : string) {
     
     return `${year}.${month}.${day}`
 }
+
+export function MinDateFormat() : string{
+    const time = new Date();
+    
+    const year = time.getFullYear();
+    const month = CombineZero(time.getMonth()+1);
+    const date = CombineZero(time.getDate());
+
+    return `${year}-${month}-${date}`
+}

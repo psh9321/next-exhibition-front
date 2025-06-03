@@ -1,6 +1,6 @@
 import { QueryClient, dehydrate, HydrationBoundary } from "@tanstack/react-query"
 
-import SocketProvider from "@/component/provider/SocketProvider";
+import SocketProvider from "@/component/(Home)/provider/SocketProvider";
 import ClientWrapper from "@/component/(Home)/shared/ClientWrapper";
 
 import { getToken } from "@/util/token"
@@ -18,9 +18,9 @@ import { LAYOUT_CHILD } from "@/types/component"
 
 const HomePageRoot = async ({children} : LAYOUT_CHILD) => {
 
-  const token = await getToken();
-
   const queryServer = new QueryClient();
+  
+  const token = await getToken();
 
   if(token) {
     

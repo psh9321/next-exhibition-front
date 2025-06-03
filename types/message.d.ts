@@ -8,9 +8,9 @@ export interface USER_RECIVER {
 }
 
 export interface SEND_MESSAGE {
-    senderId : string,
-    reciverId : string,
-    message : string 
+    senderId : string, /** 보낸사람 유저 키 */
+    reciverId : string, /** 받는사람 유저 키 */
+    message : string /** 메세지 내용 */
 }
 
 export interface MESSAGE_ITEM {
@@ -28,7 +28,7 @@ export interface MESSAGE_ROOM_ITEM {
         sendDate : Date | string, /** 발송 시간 */
         sender : string
     },
-    _id? : string
+    _id? : string /** 채팅방 objId */
 }
 
 export interface MESSAGE_ROOM_USER_DATA {
@@ -43,7 +43,7 @@ export interface MESSAGE_ROOM_USER_DATA {
 export interface MESSAGE_ROOM_RESPONSE_DATA {
     roomInfo : MESSAGE_ROOM_ITEM,
     users : MESSAGE_ROOM_USER_DATA,
-    unReadMessage : number
+    unReadMessage : number /** 읽지 않은 메세지 수 */
 }
 
 export interface MESSAGE_ROOM_DATA_ITEM {

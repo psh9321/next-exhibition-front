@@ -68,7 +68,7 @@ export async function API_MEETING_ATTEND(objId : string){
     try {
         
         const result = await CLIENT_API("meeting/attend", {
-            json : objId
+            json : DataEncrypt(objId)
         })
         .json<MEETING_PROMISE_RESPONSE>()
         .catch<MEETING_PROMISE_RESPONSE>();
@@ -84,7 +84,7 @@ export async function API_MEETING_ATTEND(objId : string){
 export async function API_MEETING_ATTEND_CANCEL(objId : string){
     try {
         const result = await CLIENT_API("meeting/attendCancel", {
-            json : objId
+            json : DataEncrypt(objId)
         })
         .json<MEETING_PROMISE_RESPONSE>()
         .catch<MEETING_PROMISE_RESPONSE>();

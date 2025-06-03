@@ -2,20 +2,18 @@
 
 import { useParams, usePathname } from "next/navigation";
 import { useEffect } from "react";
+
 import useSocket from "@/hook/useSocket"
 
 import { LAYOUT_CHILD } from "@/types/component"
 import { useUserInfoStore } from "@/store/useQueryStore";
 import { useChattingRoomStore } from "@/store/useChattingRoomStore";
 
-// import { API_MESSAGE_READ } from "@/api/message.client";
+import { API_MESSAGE_READ } from "@/api/message.client";
 
-import { MESSAGE_ROOM_ITEM, MESSAGE_ROOM_USER_DATA , MESSAGE_ROOM_RESPONSE_DATA} from "@/types/message"
+import { MESSAGE_ROOM_RESPONSE_DATA} from "@/types/message"
 
-interface RECIVE_MESSAGE {
-    messageRoom : MESSAGE_ROOM_ITEM,
-    userInfos : MESSAGE_ROOM_USER_DATA
-}
+
 
 
 const SocketProvider = ({children} : LAYOUT_CHILD) => {
@@ -37,12 +35,16 @@ const SocketProvider = ({children} : LAYOUT_CHILD) => {
 
         socket?.off("reciveMessage");
 
+        const isConnectRoom = pathname === `/message/${_id}/${_anotherId}`;
+
         socket?.on("reciveMessage", (data : MESSAGE_ROOM_RESPONSE_DATA) => {
-            SetTargetMessageQuery(data, pathname === `/message/${_id}/${_anotherId}`) 
-            SetTargetMessageStore(`${_id}-${_anotherId}`, new Date(), data["roomInfo"])
+            SetTargetMessageQuery(data, isConnectRoom); 
+            SetTargetMessageStore(`${_id}-${_anotherId}`, new Date(), data["roomInfo"]);
+
+            if(isConnectRoom) API_MESSAGE_READ(_id as string, _anotherId as string);
         });
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
     },[userInfoQuery, pathname, messageQuery]);
 
     return (

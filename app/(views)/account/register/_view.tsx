@@ -36,7 +36,7 @@ const RegisterPageView = () => {
 
     const [emailAuth, setEmailAuth] = useState<string>("");
 
-    const [currentIdx, setCurrentIdx] = useState<number>(0);
+    const [currentIdx, setCurrentIdx] = useState<number>(3);
 
     const [infoChapterMsg, setInfoChapterMsg] = useState<string>("");
 

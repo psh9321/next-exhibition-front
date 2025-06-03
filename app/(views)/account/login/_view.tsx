@@ -54,7 +54,6 @@ const LoginPage = () => {
             await SetupPromise();
             await SetupMessage();
             
-            router.prefetch("/");
             HideLoadingView();
             router.replace("/");  
         })

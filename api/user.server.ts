@@ -15,7 +15,7 @@ export async function API_SERVER_USER_GET(cookieStr : string | null){
     try {
         
         if(!cookieStr) return null
-
+        
         const result = await BACKEND_API("user", {
             method : "get",
             headers : {

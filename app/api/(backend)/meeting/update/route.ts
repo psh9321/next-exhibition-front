@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 
 import { DataDecrypt, DataEncrypt } from "@/util/crypto";
 import { getToken } from "@/util/token";
@@ -20,6 +21,8 @@ export async function POST(req : NextRequest) {
             seq,
             _id
         }) as MEETING_POST_RESPONSE;
+
+        revalidateTag(process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string);
 
         return NextResponse.json(DataEncrypt({ resultCode, data, errMsg }), {status : 200})
     }

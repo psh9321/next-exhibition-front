@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { LAYOUT_CHILD } from "@/types/component"
 
-import QueryProvider from "@/component/provider/QueryProvider";
+import QueryProvider from "@/component/(Home)/provider/QueryProvider";
 
 import "@/styles/reset.css"
 import 'react-quill/dist/quill.snow.css';

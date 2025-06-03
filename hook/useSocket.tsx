@@ -7,7 +7,6 @@ import { apiUrl } from "@/util/opts";
 
 import { SEND_MESSAGE } from "@/types/message"
 
-
 let socket : Socket | null = null;
 
 const useSocket = () => {

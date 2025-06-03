@@ -5,13 +5,13 @@ import { create } from "zustand"
 import { USER_INFO } from "@/types/user"
 import { MEETING_PROMISE_RESPONSE_DATA } from "@/types/meeting"
 import { FAVORITE_RESPONSE_DATA } from "@/types/favorite"
-import { MESSAGE_ROOM_RESPONSE_DATA, MESSAGE_ROOM_ITEM} from "@/types/message"
+import { MESSAGE_ROOM_RESPONSE_DATA } from "@/types/message"
 
 interface USER_INFO_STORE {
     userInfoQuery : USER_INFO | null, /** 좋아요 한 전시 수 */
     favoriteQuery : FAVORITE_RESPONSE_DATA | null, /** 좋아요 한 전시 쿼리 */
     promiseQuery : MEETING_PROMISE_RESPONSE_DATA | null, /** 약속된 모임 쿼리 */
-    messageQuery : MESSAGE_ROOM_RESPONSE_DATA[], /** 1:1 메세지 쿼리 */
+    messageQuery : MESSAGE_ROOM_RESPONSE_DATA[] | null, /** 1:1 메세지 쿼리 */
     unReadMessageTotal : number, /** 읽지않은 메세지 */
 
     SetUserInfoQuery : (newUserInfoData : USER_INFO) => void;
@@ -28,7 +28,7 @@ export const useUserInfoStore = create<USER_INFO_STORE>((set, get) => ({
     userInfoQuery : null,
     favoriteQuery : null,
     promiseQuery : null,
-    messageQuery : [],
+    messageQuery : null,
     unReadMessageTotal : 0,
 
     SetUserInfoQuery(newUserInfoData) { 
@@ -41,6 +41,8 @@ export const useUserInfoStore = create<USER_INFO_STORE>((set, get) => ({
 
     CreateMessageQuery(newMessageData){
         const { messageQuery } = get();
+
+        if(!messageQuery) return
 
         const newData = [ ...messageQuery ];
 
@@ -65,6 +67,8 @@ export const useUserInfoStore = create<USER_INFO_STORE>((set, get) => ({
     SetTargetMessageQuery(data, isConnectRoom) {
         
         const { messageQuery } = get();
+
+        if(!messageQuery) return
         
         const newData = [...messageQuery];
 
@@ -105,7 +109,7 @@ export const useUserInfoStore = create<USER_INFO_STORE>((set, get) => ({
             userInfoQuery : null,
             favoriteQuery : null,
             promiseQuery : null,
-            messageQuery : [],
+            messageQuery : null,
             unReadMessageTotal : 0,
         })
     }

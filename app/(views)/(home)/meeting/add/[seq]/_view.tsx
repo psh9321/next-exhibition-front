@@ -16,7 +16,7 @@ import { useToastHook } from "@/hook/useToast"
 import { useMeetingMutation } from "@/hook/useMutation"
 import { useLoadingView } from "@/hook/useLoadingView"
 
-import { ExhibitionDateFormat } from "@/util/dateFormat"
+import { ExhibitionDateFormat, MinDateFormat } from "@/util/dateFormat"
 
 import addBoxStyles from "@/styles/(home)/meeting/addMeeting.module.css"
 
@@ -115,7 +115,7 @@ const AddMeetingPageView = ({ seq } : ADD_METTING_PAGE_PARAMS) => {
         router.prefetch("/meeting/list"); 
         router.replace("/meeting/list") 
     }
-     
+    
     return (
         <>
             <AddMeetingToast 
@@ -146,7 +146,7 @@ const AddMeetingPageView = ({ seq } : ADD_METTING_PAGE_PARAMS) => {
                             </li>
                             <li>
                                 <label htmlFor="">모임 날짜</label>
-                                <InputDate id="meetingDate" maxDate={ExhibitionDateFormat(String(endDate)).replaceAll(".","-")} />
+                                <InputDate id="meetingDate" minDate={MinDateFormat()} maxDate={ExhibitionDateFormat(String(endDate)).replaceAll(".","-")} />
                                 <ErrorMsg _className={addBoxStyles.errorMsg} txt={errors?.meetingDate?.message} />
                             </li>
                             <li>

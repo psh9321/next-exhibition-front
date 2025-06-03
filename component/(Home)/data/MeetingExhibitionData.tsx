@@ -76,8 +76,6 @@ const MeetingData = () => {
                         data && data.pages.length > 0 &&
                         data.pages.map(page => {
 
-                            console.log(data,"pagepage",page)
-
                             if(!page) return "null"
 
                             const { total, meetingExhibition } = page as MEETINGEXHIBITION_RESPONSE_DATA

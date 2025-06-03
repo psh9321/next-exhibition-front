@@ -251,6 +251,9 @@ export async function API_SERVER_MEETING_EXHIBITION_LIST_TARGET(seq : string, of
             searchParams : {
                 offset, limit
             },
+            next : {
+                tags : [process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string]
+            }
         })
         .json<MEETING_EXHIBITION_TARGET_LIST_RESPONSE>()
         .catch<MEETING_EXHIBITION_TARGET_LIST_RESPONSE>();

@@ -20,6 +20,8 @@ const MessageRoomList = () => {
 
     const pathname = usePathname();
 
+    if(!messageQuery) return
+
     return (
         <>
             <ul className={messageStyles.messageRoomList}>

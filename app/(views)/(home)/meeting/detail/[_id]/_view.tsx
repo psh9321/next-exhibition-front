@@ -18,6 +18,8 @@ import { useLoadingView } from "@/hook/useLoadingView";
 import { useToastHook } from "@/hook/useToast"
 import { useMeetingMutation } from "@/hook/useMutation";
 
+import { ExhibitionDateFormat, MinDateFormat } from "@/util/dateFormat"
+
 import addBoxStyles from "@/styles/(home)/meeting/addMeeting.module.css"
 
 import { MEETING_FORM_VALUE, MEETING_DETAIL_RESPONSE_DATA, MEMBERS_INFO } from "@/types/meeting"
@@ -70,6 +72,8 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
 
             if(isReload) return setToastState("재 로그인");
 
+            router.refresh();
+
             setToastState("수정 성공");
         },
         failCallback(error) {
@@ -106,15 +110,6 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
     })
     
     const isAttend : boolean = !!membersInfo.find(el => el["id"] as keyof MEMBERS_INFO === userInfoQuery?.["id"]);
-
-    function RetunToInputDateValue(dateStr : string) {
-        
-        const year = dateStr.substring(0,4);
-        const month = dateStr.substring(4,6);
-        const day = dateStr.substring(6,8);
-        
-        return `${year}-${month}-${day}`
-    }
 
     function OnSubmit({meetingDate, meetingContents, meetingTitle, meetingMembersLength} : MEETING_FORM_VALUE){
 
@@ -163,6 +158,7 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
     }
 
     function MoveToList(){
+        
         if(
             getValues("meetingTitle")?.trim() === title?.trim() && 
             HtmlToText(getValues("meetingContents") as string) === HtmlToText(contents as string) &&
@@ -218,7 +214,7 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
         
         UpdateMeetingCallback(result);
     }
-
+    
     return (
         <>
 
@@ -268,7 +264,8 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
                                 <InputDate 
                                     id="meetingDate" 
                                     value={date}
-                                    maxDate={RetunToInputDateValue(exhibitionEndDate)} 
+                                    minDate={MinDateFormat()}
+                                    maxDate={ExhibitionDateFormat(exhibitionEndDate).replaceAll(".","-")} 
                                     isReadDisabled={userInfoQuery?.["id"] !== createUserId}
                                     />
                                 <ErrorMsg _className={addBoxStyles.errorMsg} txt={errors?.meetingDate?.message} />

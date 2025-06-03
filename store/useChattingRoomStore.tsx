@@ -62,7 +62,6 @@ export const useChattingRoomStore = create<CHATTING_ROOM_STORE>((set, get) => ({
 
     SetTargetMessageStore(queryKey, date, data){
         const { messageData } = get();
-        // console.log(`DateTimeFormat(data["lastMessage"]["sendDate"])`,DateTimeFormat(data["lastMessage"]["sendDate"]))
         
         const newData = {...messageData}
 

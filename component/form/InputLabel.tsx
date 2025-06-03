@@ -5,9 +5,10 @@ import { useFormContext } from 'react-hook-form';
 
 import { Eye, EyeOff } from 'lucide-react';
 
-import { pw_regex, name_regex, email_regex, phone_regex, birth_regex } from "@/util/regex";
 import InputDate from './InputDate';
 
+import { pw_regex, name_regex, email_regex, phone_regex, birth_regex } from "@/util/regex";
+import { OnValueLimit } from '@/util/onValueLimit';
 
 interface INPUT_LABEL_BOX {
     
@@ -19,15 +20,6 @@ interface INPUT_LABEL_BOX {
     placeholder? : string,
     toggleBtnClassName? : string,
 }
-
-/** 인풋 최대입력값 제어 */
-function OnValueLimit(e: React.FormEvent<HTMLInputElement>) : void{
-    const self : HTMLInputElement =  e.currentTarget;
-    
-    if (self.value.length < self.maxLength) return
-
-    self.value = self.value.slice(0, self.maxLength);
-};
 
 
 export const InputLabelEmail = ({ children, id, labelName, placeholder, isReadDisabled } : INPUT_LABEL_BOX) => {
@@ -181,7 +173,7 @@ export const InputLabelNickName = ({children, id, labelName, placeholder} : INPU
     return (
         <>
             <label htmlFor={id}>{labelName}</label>
-            <input {...register(id)} placeholder={placeholder??"닉네임"} id={id} type="text" />
+            <input {...register(id)}  maxLength={6} onInput={OnValueLimit} placeholder={placeholder??"닉네임"} id={id} type="text" />
             {children}
         </>
     )

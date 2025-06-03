@@ -20,6 +20,7 @@ import { useThemeStore } from "@/store/useThemeStore"
 
 import { fileUrl, area } from "@/util/opts";
 import { DateFormat } from "@/util/dateFormat";
+import { OnValueLimit } from "@/util/onValueLimit";
 
 import { API_LOGOUT } from "@/api/logout.client";
 import { API_UPLOAD_PROFILE_IMG } from "@/api/files.client";
@@ -235,7 +236,7 @@ export const MyInfoSetting = ({ CloseCallback } : MY_INFO_SETTING) => {
                                 </dt>
                                 <FormProvider {...method}>
                                     <dd>
-                                        <input {...register("userNickName")}  type="text" placeholder="닉네임을 입력해주세요."/>    
+                                        <input {...register("userNickName")}  type="text" placeholder="닉네임을 입력해주세요." maxLength={6} onInput={OnValueLimit} />    
                                     </dd>
                                     <dd>
                                         <span>거주지역</span>
