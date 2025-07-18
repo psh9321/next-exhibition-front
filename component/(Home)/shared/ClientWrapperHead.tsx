@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 import { Search, LayoutGrid, GalleryVertical } from 'lucide-react';
 
-// import BtnTheme from '../../shared/BtnTheme';
+import BtnTheme from '../../shared/BtnTheme';
 import SearchBox from './SearchBox';
 
 import { useListModeStore } from '@/store/useListModeStore';
@@ -15,7 +15,6 @@ import headStyles from "@/styles/(home)/shared/clientWrapperHead.module.css"
 
 import { LAYOUT_CHILD } from "@/types/component"
 
-
 interface HEAD_DEFAULT extends LAYOUT_CHILD {
     isDualBtn? : boolean,
     isSearchBtn? : boolean,
@@ -23,6 +22,8 @@ interface HEAD_DEFAULT extends LAYOUT_CHILD {
 }
 
 export const Head = ({children, isDualBtn, isSearchBtn, isSearchResult} : HEAD_DEFAULT) => {
+
+    
 
     const { toggleListMode, listMode } = useListModeStore();
 
@@ -62,9 +63,9 @@ export const Head = ({children, isDualBtn, isSearchBtn, isSearchResult} : HEAD_D
                             </button>
                         </li>
                     }
-                    {/* <li className={headStyles.theme}>
+                    <li className={headStyles.theme}>
                         <BtnTheme className={headStyles.btnTheme} />
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </>

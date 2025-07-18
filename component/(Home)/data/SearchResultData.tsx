@@ -8,6 +8,7 @@ import { useInfiniteQuery, QueryFunctionContext } from "@tanstack/react-query"
 
 import { useLoadingView } from "@/hook/useLoadingView";
 import { useListModeStore } from "@/store/useListModeStore";
+import { useThemeStore } from "@/store/useThemeStore";
 
 import exhibitionListStyles from "@/styles/(home)/shared/exhibitionList.module.css"
 
@@ -16,9 +17,12 @@ import { ExhibitionDateFormat } from "@/util/dateFormat";
 import { OPEN_API_CLIENT_RESPONSE_DATA, EXHIBITION_ITEM, CLIENT_EXHIBITION_API_PARAMS, EXHIBITION_API_RESPONSE } from "@/types/exhibition"
 
 
+
 const SearchResultData = () => {
 
     const searchParams = useSearchParams();
+
+    const { theme } = useThemeStore();
 
     const { data, fetchNextPage, isLoading, hasNextPage } = useInfiniteQuery({
         queryKey: [process["env"]["NEXT_PUBLIC_QUERY_KEY_SEARCH_EXHIBITION"] as string],
@@ -120,7 +124,7 @@ const SearchResultData = () => {
                     }
                 </>
                 : 
-                <li className={exhibitionListStyles.searchEmpty}>
+                <li className={`${exhibitionListStyles.searchEmpty} ${exhibitionListStyles[theme]}`}>
                     <dl>
                         <dt>“{searchParams.get("searchKeyword")}”</dt>
                         <dd>검색 결과가 없습니다.</dd>

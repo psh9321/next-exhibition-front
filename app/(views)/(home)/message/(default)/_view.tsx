@@ -3,11 +3,15 @@
 import { MessageSquareWarning } from "lucide-react"
 
 import messageStyles from "@/styles/(home)/message/message.module.css"
+import { useThemeStore } from "@/store/useThemeStore"
 
 const MessageDefaultView = () => {
+
+    const { theme } = useThemeStore();
+
     return (
         <>
-            <div className={messageStyles.default}>
+            <div className={`${messageStyles.default} ${messageStyles[theme]}`}>
                 <div className={messageStyles.imgBox}>
                     <MessageSquareWarning/>
                 </div>

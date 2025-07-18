@@ -6,10 +6,10 @@ import { useThemeStore } from '@/store/useThemeStore';
 
 const BtnTheme = ({className} : {className? : string}) => {
 
-    const { theme } = useThemeStore();
+    const { theme, ToggleTheme } = useThemeStore();
 
     return (
-        <button className={className??"btnTheme"}>
+        <button className={className??"btnTheme"} onClick={ToggleTheme}>
             {theme === "light" && <Sun stroke='#fff'/>}
             {theme === "dark" && <Moon stroke='#fff'/>}
         </button>

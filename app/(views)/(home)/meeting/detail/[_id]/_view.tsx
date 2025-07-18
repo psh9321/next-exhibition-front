@@ -17,12 +17,14 @@ import { useUserInfoStore } from "@/store/useQueryStore";
 import { useLoadingView } from "@/hook/useLoadingView";
 import { useToastHook } from "@/hook/useToast"
 import { useMeetingMutation } from "@/hook/useMutation";
+import { useThemeStore } from "@/store/useThemeStore";
 
 import { ExhibitionDateFormat, MinDateFormat } from "@/util/dateFormat"
 
 import addBoxStyles from "@/styles/(home)/meeting/addMeeting.module.css"
 
 import { MEETING_FORM_VALUE, MEETING_DETAIL_RESPONSE_DATA, MEMBERS_INFO } from "@/types/meeting"
+
 
 const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA }) => {
 
@@ -49,6 +51,8 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
     const { setToastState, DetailMeetingToast, BeforeLoginToast } = useToastHook();
 
     const { LoadingElement, ShowLoadingView, HideLoadingView } = useLoadingView();
+
+    const { theme } = useThemeStore();
 
     const { DeleteMeeting, UpdateMeeting, AttendMeeting, AttendCancelMeeting } = useMeetingMutation();
 
@@ -236,7 +240,7 @@ const DetailMeetingPageView = ({ data } : { data : MEETING_DETAIL_RESPONSE_DATA 
                     <Link onClick={LinkLoginBefore} href={`/message/${userInfoQuery?.["key"]}/${createUserKey}`}><Send /></Link>
                 }            
             </HeadTitle>
-            <div className={addBoxStyles.addBox}>
+            <div className={`${addBoxStyles.addBox} ${addBoxStyles[theme]}`}>
                 <h3>
                     <Link title="클릭시 해당 전시 상세 페이지로 이동" href={`/exhibition/detail/${seq}`}>{`"${exhibitionTitle}"`}</Link>
                 </h3>

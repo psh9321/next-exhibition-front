@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { UserRound } from 'lucide-react';
 
+import { useThemeStore } from "@/store/useThemeStore";
 import { useUserInfoStore } from "@/store/useQueryStore";
 
 import { fileUrl } from "@/util/opts";
@@ -12,7 +13,10 @@ import { MEETING_ITEM } from "@/types/meeting"
 
 import meetingListStyle from "@/styles/(home)/meeting/meetingList.module.css"
 
+
 const MyPromiseData = ({ promise } : {promise : MEETING_ITEM[]}) => {
+
+    const { theme } = useThemeStore();
 
     const { promiseQuery, ResetPromiseQuery } = useUserInfoStore();
 
@@ -25,7 +29,7 @@ const MyPromiseData = ({ promise } : {promise : MEETING_ITEM[]}) => {
     },[])
 
     return (
-        <ul className={meetingListStyle["meetingList"]}>
+        <ul className={`${meetingListStyle["meetingList"]} ${meetingListStyle[theme]}`}>
             {
                 promise && promise.length > 0 ?
                 promise.map((el, i) => {

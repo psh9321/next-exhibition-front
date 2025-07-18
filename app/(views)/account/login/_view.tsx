@@ -7,7 +7,7 @@ import { InputLabelEmail, InputLabelPw } from "@/component/form/InputLabel"
 import { ErrorMsg } from "@/component/shared/Message"
 import { BtnNaviHome } from "@/component/account/BtnHome"
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 import { useLoadingView } from "@/hook/useLoadingView"
 import { useToastHook } from "@/hook/useToast"
@@ -49,11 +49,13 @@ const LoginPage = () => {
                 return setToastState("로그인 실패");
             }
 
-            await SetUpUserInfo();
-            await SetupFavorite();
-            await SetupPromise();
-            await SetupMessage();
-            
+            await Promise.all([
+                SetUpUserInfo(),
+                SetupFavorite(),
+                SetupPromise(),
+                SetupMessage(),
+            ]);
+
             HideLoadingView();
             router.replace("/");  
         })

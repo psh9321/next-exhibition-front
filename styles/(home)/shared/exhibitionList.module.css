@@ -48,9 +48,27 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: calc(50% - 20px);
-    height: 550px;
+    height: 520px;
     margin: 10px;
 }
+
+/* .exhibitionListDual li,
+.exhibitionListSingle li {
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.25s ease;    
+}
+
+.exhibitionListDual li.on,
+.exhibitionListSingle li.on {
+    opacity: 1;
+    transform: scale(1);
+} */
+
+/* .exhibitionListDual li:nth-child(-n+4) {
+    opacity: 1;
+    transform: scale(1);
+} */
 
 .exhibitionListSingle li a,
 .exhibitionListDual li a {
@@ -177,6 +195,11 @@
     color: #000;
     font-size: 1.8rem;
     border: 1px solid #000;
+}
+
+.exhibitionListSingle li.searchEmpty.dark dt,
+.exhibitionListDual li.searchEmpty.dark dt{
+    color: #888;
 }
 
 @media all and (max-width : 1495px) {

@@ -230,6 +230,9 @@ export async function API_SERVER_MEETING_EXHIBITION(offset : number, limit : num
             method : "get",
             searchParams : {
                 offset, limit
+            },
+            next : {
+                tags : [process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string],
             }
         })
         .json<MEETING_EXHIBITION_RESPONSE>()

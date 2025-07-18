@@ -12,6 +12,7 @@ import BtnFavorite from "@/component/(Home)/shared/BtnFavorite";
 import EmptyDataPage from "@/component/(Home)/shared/EmptyPage";
 
 import { useToastHook } from "@/hook/useToast";
+import { useThemeStore } from '@/store/useThemeStore';
 
 import { ExhibitionDateFormat } from "@/util/dateFormat";
 import { areaColor, typesColor } from "@/util/opts";
@@ -22,15 +23,11 @@ import { EXHIBITION_DETAIL_ITEM } from "@/types/exhibition"
 import { AREA_COLOR_VALUE ,TYPES_COLOR_VALUE } from "@/types/opts"
 import { MEETING_EXHIBITION_TARGET_DATA } from "@/types/meeting"
 
-
-
 interface PARAMS {
     params : {
         seq : string
     }
 }
-
-
 
 const ExhibitionDetailPageView = ({ params } : PARAMS) => {
 
@@ -49,6 +46,8 @@ const ExhibitionDetailPageView = ({ params } : PARAMS) => {
     const userInfoQuery = queryClient.getQueryData(["userInfo-query"]);
     
     const { BeforeLoginToast, setToastState } = useToastHook();
+
+    const { theme } = useThemeStore();
 
     const [loading, error] = useKakaoLoader({
         appkey : "231b71ed8f3ba4b8fa4971b49a8da106",
@@ -75,7 +74,7 @@ const ExhibitionDetailPageView = ({ params } : PARAMS) => {
 
             <HeadLink isSearchBtn={true} linkName="목록으로"/>
 
-            <div className={detailBoxStyle.detailBox}>
+            <div className={`${detailBoxStyle.detailBox} ${detailBoxStyle[theme]}`}>
                 <div className={detailBoxStyle.infoBox}>
                     <div style={{backgroundImage:`url(${imgUrl})`}}className={detailBoxStyle.imgBox}></div>
                     <dl>

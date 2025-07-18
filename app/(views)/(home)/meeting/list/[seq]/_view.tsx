@@ -7,6 +7,8 @@ import { useQueryClient } from "@tanstack/react-query"
 import MeetingListTargetData from "@/component/(Home)/data/MeetingListTargetData"
 import EmptyDataPage from "@/component/(Home)/shared/EmptyPage"
 
+import { useThemeStore } from "@/store/useThemeStore"
+
 import { areaColor, typesColor } from "@/util/opts";
 import { ExhibitionDateFormat } from "@/util/dateFormat"
 
@@ -15,11 +17,14 @@ import meetingListTargetStyles from "@/styles/(home)/meeting/meetingListTarget.m
 import { MEETING_EXHIBITION_ITEM } from "@/types/meeting"
 import { AREA_COLOR_VALUE ,TYPES_COLOR_VALUE } from "@/types/opts"
 
+
 const MeetingTargetListView = () => {
 
-    const params = useParams()
+    const params = useParams();
 
     const queryClient = useQueryClient();
+
+    const { theme } = useThemeStore();
 
     const queryData = queryClient.getQueryData([process["env"]["NEXT_PUBLIC_QUERY_KEY_EXHIBITION"], `target-${params.seq}`]) as MEETING_EXHIBITION_ITEM;
 
@@ -39,7 +44,7 @@ const MeetingTargetListView = () => {
 
     return (
         <>
-            <div className={meetingListTargetStyles.exhibitionInfo}>
+            <div className={`${meetingListTargetStyles.exhibitionInfo} ${meetingListTargetStyles[theme]}`}>
                 <div style={{backgroundImage: `url(${exhibitionImg})`}} className={meetingListTargetStyles.thumbnailBox}>
                     
                 </div>

@@ -16,7 +16,7 @@ import { ID_SEARCH_FROM_VALUE, ID_SEARCH_SUCCESS_DATA  } from "@/types/account/i
 
 import { API_ACCOUNT_ID_SEARCH } from "@/api/account.client"
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 
 const IdSearchPageView = () => {

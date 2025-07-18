@@ -182,6 +182,19 @@
 .Chungnam { background-color: #8B4513; }
 .Chungbuk { background-color: #556B2F; }
 
+
+.meetingTargetList.dark li {
+    color: #888;
+}
+
+.exhibitionInfo.dark {
+    color: #888;
+}
+
+.exhibitionInfo.dark dl dd span {
+    background-color: #888;
+}
+
 @media all and (max-width :1510px) {
     .exhibitionInfo {
         padding: 0 15px;

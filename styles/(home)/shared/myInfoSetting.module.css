@@ -19,9 +19,14 @@
 }
 
 #myInfoSetting.dark .inner {
-    color: #666666;
+    color: #888;
     background-color: #18181b;
-    /* border: 1px solid #666666; */
+    /* border: 1px solid #888; */
+}
+
+#myInfoSetting.dark .profileImgLayer {
+    color: #888;
+    background-color: #18181b;
 }
 
 #myInfoSetting .inner:before {
@@ -138,7 +143,7 @@
 }
 
 #myInfoSetting.dark .afterLogin dl dt .imgBox {
-    border-color: #666666;
+    border-color: #888;
 }
 
 #myInfoSetting .afterLogin dl dt .imgBox svg {
@@ -204,9 +209,9 @@
 }
 
 #myInfoSetting.dark .afterLogin dl dd input {
-    color: #666666;
+    color: #888;
     background-color: #18181b;
-    border-bottom-color: #666666;
+    border-bottom-color: #888;
 }
 
 #myInfoSetting .afterLogin dl dd input::placeholder {
@@ -231,7 +236,7 @@
 }
 
 #myInfoSetting.dark .afterLogin dl dd .selectBox > button {
-    border-bottom-color: #666666;
+    border-bottom-color: #888;
 }
 
 #myInfoSetting .afterLogin dl dd .selectBox .selectList {
@@ -240,24 +245,9 @@
     height: 120px;
 }
 
-#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList {
-    top: 35px;
-    width: 90px;
-    height: 120px;
-    background-color: #18181b;
-}
-
 #myInfoSetting .afterLogin dl dd .selectBox .selectList li button {
     margin: 5px 0;
 
-}
-
-#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList li button svg {
-    stroke: #666666;
-}
-
-#myInfoSetting.dark .afterLogin dl dd .selectBox .selectList::-webkit-scrollbar-thumb {
-    background-color: #666666;
 }
 
 #myInfoSetting .afterLogin .utilBox {
@@ -280,7 +270,7 @@
 }
 
 #myInfoSetting.dark .afterLogin .utilBox ul {
-    color: #666666;
+    color: #888;
 }
 
 #myInfoSetting .afterLogin .utilBox ul li.date {

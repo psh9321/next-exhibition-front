@@ -37,7 +37,7 @@ const ClientWrapper = ({children} : LAYOUT_CHILD) => {
         messageQuery,
     } = useUserInfoStore();
 
-    const { theme } = useThemeStore();
+    const { theme, InitTheme } = useThemeStore();
 
     const userInfoClientQuery = queryClient.getQueryData([process["env"]["NEXT_PUBLIC_QUERY_KEY_USER_INFO"]]) as USER_INFO;
     
@@ -48,6 +48,8 @@ const ClientWrapper = ({children} : LAYOUT_CHILD) => {
     const messageClientQuery = queryClient.getQueryData([process["env"]["NEXT_PUBLIC_QUERY_KEY_MASSAGE"],"rooms"]) as MESSAGE_ROOM_RESPONSE_DATA[]
     
     useLayoutEffect(() => {
+        
+        InitTheme()
         
         if(userInfoClientQuery && !userInfoQuery) SetUserInfoQuery(userInfoClientQuery);
         if(promiseClientQuery && !promiseQuery) SetPromiseQuery(promiseClientQuery);

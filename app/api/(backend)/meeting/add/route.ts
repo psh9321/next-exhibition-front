@@ -42,7 +42,7 @@ export async function POST(req : NextRequest){
             exhibitionType
         }) as MEETING_POST_RESPONSE;
 
-        revalidateTag(process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string);
+        await revalidateTag(process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string);
 
         return NextResponse.json(DataEncrypt({ resultCode, data, errMsg }), {status : 200})
     }

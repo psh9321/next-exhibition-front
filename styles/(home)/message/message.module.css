@@ -46,7 +46,6 @@
 
 .messageRoomList li a dl {
     margin-left: 15px;
-    font-size: 1.4rem;
 }
 
 .messageRoomList li a dl > * {
@@ -56,8 +55,13 @@
     overflow: hidden;
 }
 
+.messageRoomList li a dl dt {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
 .messageRoomList li a dl dd {
-    line-height: 1.3;
+    font-size: 1.6rem;
 }
 
 .messageRoomList li a dl dd:nth-child(n+2) {
@@ -85,18 +89,18 @@
     background-color: #000;
     border-radius: 100%;
 }
-
-.messageRoomList li a:hover {
+.messageRoomList li a:hover
+ {
     background-color: #f1f1f1;
 }
 
-.messageRoomList li.active:after {
+.messageRoomList li:after {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: block;
+    display: none;
     width: 100%;
     height: 100%;
     background-color: #f1f1f1;
@@ -118,6 +122,10 @@
 
 .messageRoomList li.active .postNo {
     /* display: none; */
+}
+
+.messageRoomList li.active:after {
+    display: block;
 }
 
 .messageContents {
@@ -264,6 +272,7 @@
 .messageContentsList > li dl {
     position: relative;
     display: inline-block;
+    text-align: left;
 }
 
 .messageContentsList > li dl dt {
@@ -320,6 +329,58 @@
     resize: none;
     border-radius: 50px;
     box-sizing: border-box;
+}
+
+.messageRoomList.dark {
+    border-right-color: #888;
+}
+
+.messageRoomList.dark li a dl dt {
+    color: #888;
+}
+
+.messageRoomList.dark li a .imgBox {
+    border-color: #888;
+}
+
+.messageRoomList.dark li a .imgBox svg {
+    stroke: #888;
+}
+
+.messageRoomList.dark li a:hover {
+    background-color: rgb(136, 136, 136, 0.2);   
+}
+
+.messageRoomList.dark li.active:after {
+    background-color: rgb(136, 136, 136, 0.2);
+}
+
+.default.dark .imgBox svg {
+    stroke: #888;
+}
+
+.default.dark dl dt {
+    color: #888;
+}
+
+.messageRoom.dark .opponentBox {
+    border-bottom-color: #888;
+}
+
+.messageRoom.dark .opponentBox .imgBox {
+    border-color: #888;
+}
+
+.messageRoom.dark .opponentBox .imgBox svg {
+    stroke: #888;
+}
+
+.messageRoom.dark .opponentBox dl {
+    color: #888;
+}
+
+.messageRoom.dark .opponentBox dl dd:before {
+    background-color: #888;
 }
 
 @media all and (max-width : 1145px) {

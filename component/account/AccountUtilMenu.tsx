@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from "next/navigation";
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 interface BUTTON_TYPE {
     href : string,

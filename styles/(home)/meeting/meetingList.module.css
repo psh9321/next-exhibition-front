@@ -156,6 +156,14 @@
     transform: translateX(-50%); */
 }
 
+.meetingList.dark > li {
+    color: #888;
+}
+
+.meetingList.dark > li dl dd span {
+    background-color: #888;
+}
+
 .promiseEmpty dl {
     font-size: 2.6rem;
 }

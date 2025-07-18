@@ -132,8 +132,9 @@
 }
 
 .detailBox .map {
-    width: 100%;
+    width: calc(100% - 50px);
     height: 400px;
+    margin: 0 auto;
     background-color: #000;
     border-radius: 5px;
 }
@@ -224,6 +225,39 @@
     text-align: center;
     padding-top: 40px;
 }
+
+.detailBox.dark .infoBox > dl {
+    color: #888;
+}
+
+.detailBox.dark .infoBox > dl dd a {
+    color: #888;
+}
+
+.detailBox.dark .infoBox > dl .typeList li {
+    background-color: #888 !important;
+}
+
+.detailBox.dark .meetingBox h3 {
+    color: #888
+}
+
+.detailBox.dark .meetingBox table {
+    color: #888;
+}
+
+.detailBox.dark .meetingBox table .title a {
+    color: inherit;
+}
+
+.detailBox.dark .mapBox h3 {
+    color: #888;
+}
+
+/* .detailBox.dark .meetingBox h3 a {
+    
+} */
+
 @media all and (max-width : 1495px) {
     .detailBox {
         justify-content: center;

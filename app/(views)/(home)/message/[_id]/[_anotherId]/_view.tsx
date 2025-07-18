@@ -11,6 +11,7 @@ import MessageData from "@/component/(Home)/data/MessageData"
 
 import useSocket from '@/hook/useSocket';
 import { useUserInfoStore } from '@/store/useQueryStore';
+import { useThemeStore } from '@/store/useThemeStore';
 
 import { API_MESSAGE_READ } from '@/api/message.client';
 
@@ -19,6 +20,7 @@ import { fileUrl } from "@/util/opts";
 import messageStyles from "@/styles/(home)/message/message.module.css"
 
 import { USER_RECIVER, MESSAGE_FORM_VALUE, MESSAGE_READ_RESPONSE } from "@/types/message"
+
 
 interface MESSAGE_ROOM {
     anotherIdKey : string,
@@ -30,6 +32,8 @@ const MessageRoomView = ({ anotherIdKey, anotherData } : MESSAGE_ROOM) => {
     const { _id, _anotherId } = useParams();
         
     const { userInfoQuery, SetMessageQuery } = useUserInfoStore();
+
+    const { theme } = useThemeStore();
 
     const { register, handleSubmit, watch, setValue } = useForm<MESSAGE_FORM_VALUE>({
         defaultValues : {
@@ -65,7 +69,7 @@ const MessageRoomView = ({ anotherIdKey, anotherData } : MESSAGE_ROOM) => {
 
     return (
         <>
-            <div className={messageStyles.messageRoom}>
+            <div className={`${messageStyles.messageRoom} ${messageStyles[theme]}`}>
                 <div className={messageStyles.opponentBox}>
                     <div className={messageStyles.imgBox} style={{backgroundImage : `url(${anotherData?.["profileImg"] && `${fileUrl}/${anotherData?.["id"]}/profile/${anotherData?.["profileImg"]}`})`}}>
                         {!anotherData?.["profileImg"] && <User2Icon/>}

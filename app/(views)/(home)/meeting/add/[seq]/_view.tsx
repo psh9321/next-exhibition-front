@@ -22,6 +22,7 @@ import addBoxStyles from "@/styles/(home)/meeting/addMeeting.module.css"
 
 import { EXHIBITION_DETAIL_ITEM } from "@/types/exhibition"
 import { ADD_METTING_PAGE_PARAMS, MEETING_FORM_VALUE } from "@/types/meeting"
+import { useThemeStore } from "@/store/useThemeStore"
 
 
 const AddMeetingPageView = ({ seq } : ADD_METTING_PAGE_PARAMS) => {   
@@ -37,6 +38,8 @@ const AddMeetingPageView = ({ seq } : ADD_METTING_PAGE_PARAMS) => {
     const methods = useForm<MEETING_FORM_VALUE>();
 
     const { AddMeeting } = useMeetingMutation();
+
+    const { theme } = useThemeStore()
 
     const { mutate: addMeeting } = AddMeeting({
         successCallback(reLogin) {
@@ -126,7 +129,7 @@ const AddMeetingPageView = ({ seq } : ADD_METTING_PAGE_PARAMS) => {
             <LoadingElement/>
 
             <HeadTitle title="모임 만들기" />
-            <div className={addBoxStyles.addBox}>
+            <div className={`${addBoxStyles.addBox} ${addBoxStyles[theme]}`}>
                 <h3>
                     <Link title="클릭시 해당 전시 상세 페이지로 이동" href={`/exhibition/detail/${seq}`}>{`"${title}"`}</Link>
                 </h3>

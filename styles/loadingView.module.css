@@ -24,14 +24,17 @@
             animation: spin 1s linear infinite;
 }
 
+.loadingView.dark { background-color: rgba(0,0,0,0.8) }
+.loadingView.dark .icon { border-top-color: #666666 }
+
 @-webkit-keyframes spin {
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
+}
   
-  @keyframes spin {
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
+}

@@ -256,7 +256,7 @@ export const MyInfoSetting = ({ CloseCallback } : MY_INFO_SETTING) => {
                             </div>
                             {
                                 isProfileLayer &&
-                                <div className={myInfoSettnigStyle.profileImgLayer}>
+                                <div className={`${myInfoSettnigStyle.profileImgLayer}`}>
                                     <ul>
                                         <li><button onClick={ToggleProfileLayer}>닫기</button></li>
                                         <li><button onClick={ResetProfileImg}>삭제</button></li>

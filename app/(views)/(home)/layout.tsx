@@ -36,6 +36,7 @@ const HomePageRoot = async ({children} : LAYOUT_CHILD) => {
     await queryServer.prefetchQuery({
       queryKey : [process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"],"promise"],
       queryFn : async () => {
+        
         const result = await API_SERVER_MEETING_PROMISE(token) as MEETING_PROMISE_RESPONSE;
 
         return result["data"];

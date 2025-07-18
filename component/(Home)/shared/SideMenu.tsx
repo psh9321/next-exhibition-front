@@ -7,6 +7,7 @@ import { useState } from "react";
 import { UserRound } from 'lucide-react';
 
 import { MyInfoSetting } from "./MyInfoSetting";
+import BtnTheme from "@/component/shared/BtnTheme";
 
 import { useToastHook } from "@/hook/useToast";
 
@@ -18,8 +19,9 @@ import { fileUrl } from "@/util/opts";
 import sideMenuStyles from "@/styles/(home)/shared/sideMenu.module.css"
 
 
+
 const SideMenu = () => {
-    
+
     const router = useRouter();
 
     const pathname = usePathname();
@@ -92,9 +94,9 @@ const SideMenu = () => {
                         </>
                     }
                     <ul className={sideMenuStyles.utilList}>
-                        {/* <li>
+                        <li>
                             <BtnTheme className={sideMenuStyles.btnTheme}/>
-                        </li> */}
+                        </li>
                         {
                             userInfoQuery && 
                             <li>

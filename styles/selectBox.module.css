@@ -70,3 +70,16 @@
     text-decoration: underline;
     text-decoration-color: #3C00EE;
 }
+
+.selectBox.dark .selectList {
+    border: 1px solid #888;
+    background-color: #18181b;
+}
+
+.selectBox.dark .selectList li button svg {
+    stroke: #888;
+}
+
+.selectBox.dark .selectList::-webkit-scrollbar-thumb {
+    background-color: #888;
+}

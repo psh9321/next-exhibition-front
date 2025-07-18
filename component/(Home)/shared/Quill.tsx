@@ -45,21 +45,3 @@ export const WriteEditor = <T extends FieldValues>({id, value, onChange, classNa
         </>
     )
 }
-
-export const ReadEditor = ({value, className} : {value : string | undefined, className? : string}) => {
-
-    const modules = {
-        toolbar : false
-    }
-
-    return (
-        <ReactQuill 
-            className={className}
-            modules={modules}
-            value={value}
-            readOnly={true}
-            theme={"bubble"}
-        />
-    )
-}
-

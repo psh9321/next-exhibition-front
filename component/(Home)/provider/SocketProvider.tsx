@@ -14,8 +14,6 @@ import { API_MESSAGE_READ } from "@/api/message.client";
 import { MESSAGE_ROOM_RESPONSE_DATA} from "@/types/message"
 
 
-
-
 const SocketProvider = ({children} : LAYOUT_CHILD) => {
 
     const { socket, Connect } = useSocket();

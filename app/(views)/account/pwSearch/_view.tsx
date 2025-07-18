@@ -11,7 +11,7 @@ import { BtnNaviHome } from "@/component/account/BtnHome"
 import { useLoadingView } from "@/hook/useLoadingView"
 import { useToastHook } from "@/hook/useToast"
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 import { API_ACCOUNT_PW_CHANGE, API_ACCOUNT_PW_SEARCH } from "@/api/account.client"
 

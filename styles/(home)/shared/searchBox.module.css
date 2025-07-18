@@ -24,7 +24,7 @@
 }
 
 .searchBox.dark .inner {
-    color: #666666;
+    color: #888;
     background-color: #18181b;
 }
 
@@ -39,6 +39,10 @@
 
 .searchBox .inner .searchForm .searchFormList > li .selectBox button {
     height: 35px;
+}
+
+.searchBox.dark .inner .searchForm .searchFormList > li .selectBox button {
+    border-color: #666;
 }
 
 .searchFormList > li {
@@ -70,9 +74,9 @@
 }
 
 .searchBox.dark .searchFormList > li input[type=text] {
-    color: #666666;
+    color: #888;
     background-color: #18181b;
-    border-color: #666666;
+    border-color: #888;
 }
 
 .searchFormList > li .errorMsg {
@@ -92,10 +96,11 @@
 }
 
 .searchBox.dark .searchFormList > li .btnSelect {
-    border-color: #666666;
+    border-color: #888;
+    background-color: #f0f;
 }
 
-.searchFormList > li .selectBox .selectList {
+.searchBox.dark .searchFormList > li .selectBox .selectList {
     top: 45px;
     background-color: #18181b;
 }
@@ -122,9 +127,14 @@
 }
 
 .searchBox.dark .searchFormList > li .dateInputBox input[type=date] {
-    color: #666666;
+    color: #888;
     background-color: #18181b;
-    border-color: #666666;
+    border-color: #888;
+    accent-color: #ff5733; /* 원하는 색상 */
+}
+
+.searchBox.dark .searchFormList > li .dateInputBox input[type=date]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(51%) sepia(22%) saturate(0%) hue-rotate(16deg) brightness(100%) contrast(99%);
 }
 
 .searchForm button[type=submit] {
@@ -137,7 +147,7 @@
 }
 
 .searchBox.dark .searchForm button[type=submit] {
-    border-color: #666666;
+    border-color: #888;
 }
 
 .recentBox h3 {
@@ -167,7 +177,11 @@
 }
 
 .searchBox.dark .recentBox .recentList {
-    border-color: #666666;
+    border-color: #888;
+}
+
+.searchBox.dark .recentBox .recentList li button {
+    border-color: #888;
 }
 
 .recentBox .recentList::-webkit-scrollbar  {
@@ -180,7 +194,7 @@
 }
 
 .searchBox.dark .recentBox .recentList::-webkit-scrollbar-thumb {
-    background-color: #666666;
+    background-color: #888;
 }
 
 .recentBox .recentList li {
@@ -211,8 +225,13 @@
     
 }
 
+.searchBox.dark .recentBox .recentList li .btnDelete {
+    background-color: #888;
+}
+
 .recentBox .recentList li .btnDelete span {
     position: absolute;
+    top: 5.5px;
     display: block;
     width: 100%;
     height: 2px;

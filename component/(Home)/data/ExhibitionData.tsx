@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { useInView } from "react-intersection-observer"
 import { useInfiniteQuery, QueryFunctionContext } from "@tanstack/react-query"
 
@@ -11,12 +11,16 @@ import { useLoadingView } from "@/hook/useLoadingView";
 import { useListModeStore } from "@/store/useListModeStore";
 
 import { ExhibitionDateFormat } from "@/util/dateFormat";
+import { FadeAnimation } from "@/util/FadeAnimation";
 
 import { API_GET_EXHIBITION } from "@/api/openApi.client";
 
 import { OPEN_API_CLIENT_RESPONSE_DATA, EXHIBITION_ITEM, EXHIBITION_API_RESPONSE  } from "@/types/exhibition"
 
 import exhibitionListStyles from "@/styles/(home)/shared/exhibitionList.module.css"
+
+
+
 
 
 const ExhibitionData = () => {
@@ -42,6 +46,8 @@ const ExhibitionData = () => {
         threshold: 0,
         delay: 0,
     });
+
+    const dataWrapperRef = useRef<HTMLUListElement>(null);
 
     const { LoadingElement, ShowLoadingView, HideLoadingView } = useLoadingView();
 
@@ -72,13 +78,45 @@ const ExhibitionData = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[inView])
 
+    useEffect(() => {
+        if(!dataWrapperRef["current"]) return
+        if(dataWrapperRef["current"].querySelectorAll(`li:not(.inView)`).length <= 0) return
+
+        const liArr = dataWrapperRef["current"].querySelectorAll(`li:not(.inView)`);
+
+        const observer = new IntersectionObserver(items => {
+            items.forEach(item => {
+                if(item.isIntersecting) {
+                    if(!item.target.classList.contains("on")) {
+                        item.target.classList.add("on")
+                        FadeAnimation("in", item.target as HTMLElement, 250);
+                    }
+                }
+                else {
+                    item.target.classList.remove("on");
+                    FadeAnimation("out", item.target as HTMLElement, 250);
+                }
+            })
+        }, {
+            threshold : 0.5
+        });
+
+        liArr.forEach(li => observer.observe(li));
+
+        return () => {
+            liArr.forEach(li => observer.unobserve(li));
+            observer.disconnect();
+        }
+
+    },[data]);
+
     if(isLoading || !data) return <></>
 
     return (
         <>
             <LoadingElement/>
             
-            <ul className={exhibitionListStyles[`exhibitionList${listMode}`]}>
+            <ul ref={dataWrapperRef} className={exhibitionListStyles[`exhibitionList${listMode}`]}>
                 {
                     data?.pages.map((page) => {
 
@@ -107,7 +145,7 @@ const ExhibitionData = () => {
                         })
                     })
                 }
-                <li ref={ref} style={{ height: 1 }} /> 
+                <li className="inView" ref={ref} style={{ height: 1 }} /> 
             </ul>
         </>
     )

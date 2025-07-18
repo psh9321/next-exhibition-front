@@ -3,6 +3,7 @@ import { useFormContext } from 'react-hook-form';
 import { ChevronsUpDown, Check } from 'lucide-react';
 
 import selectBoxStyles from "@/styles/selectBox.module.css"
+import { useThemeStore } from '@/store/useThemeStore';
 
 interface SELECT_BOX {
     options : string[];
@@ -18,6 +19,8 @@ interface SELECT_BOX {
 const SelectBox = ({children, id, options, defaultSelectValue, className, selectListStyle, selectListClassName} : SELECT_BOX) => {
 
     const { setValue } = useFormContext();
+
+    const { theme } = useThemeStore();
 
     const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -61,7 +64,7 @@ const SelectBox = ({children, id, options, defaultSelectValue, className, select
 
     return (
         <>
-            <div className={`${selectBoxStyles.selectBox} ${className??""}`}>
+            <div className={`${selectBoxStyles.selectBox} ${selectBoxStyles[theme]} ${className??""}`}>
                 <button onClick={ListToggle} type="button" className={selectBoxStyles.btnSelect}>{selectValue}
                     <ChevronsUpDown/>
                 </button>

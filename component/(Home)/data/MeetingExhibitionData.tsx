@@ -5,6 +5,7 @@ import { useInfiniteQuery } from "@tanstack/react-query"
 import { useEffect } from "react";
 
 import { useLoadingView } from "@/hook/useLoadingView";
+import { useThemeStore } from "@/store/useThemeStore";
 
 import { ExhibitionDateFormat } from "@/util/dateFormat";
 import { areaColor, typesColor } from "@/util/opts";
@@ -19,6 +20,8 @@ import { AREA_COLOR_VALUE ,TYPES_COLOR_VALUE } from "@/types/opts"
 const MeetingData = () => {
 
     const { LoadingElement, ShowLoadingView, HideLoadingView } = useLoadingView();
+
+    const { theme } = useThemeStore();
     
     const { data, isStale, refetch } = useInfiniteQuery({
         queryKey : [process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string,"list"],
@@ -71,7 +74,7 @@ const MeetingData = () => {
     return (   
         <>
                 <LoadingElement/>
-                <ul className={meetingListStyle["meetingList"]}>
+                <ul className={`${meetingListStyle["meetingList"]}  ${meetingListStyle[theme]}`}>
                     {
                         data && data.pages.length > 0 &&
                         data.pages.map(page => {

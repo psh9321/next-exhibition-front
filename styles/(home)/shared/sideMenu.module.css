@@ -9,7 +9,7 @@
 }
 
 #sideMenu.dark {
-    border-color: #666666;
+    border-color: #888;
 }
 
 #sideMenu .myInfo {
@@ -18,7 +18,7 @@
 }
 
 #sideMenu.dark .myInfo {
-    border-color: #666666;
+    border-color: #888;
 }
 
 #sideMenu .myInfo h3 {
@@ -30,7 +30,7 @@
 }
 
 #sideMenu.dark .myInfo h3 {
-    color: #666666;
+    color: #888;
 }
 
 #sideMenu .myInfo h3 .imgBox {
@@ -48,7 +48,7 @@
 }
 
 #sideMenu.dark .myInfo h3 .imgBox {
-    border-color: #666666;
+    border-color: #888;
 }
 
 #sideMenu .myInfo h3 .imgBox svg {
@@ -130,6 +130,10 @@
     border-radius: 5px;
 }
 
+#sideMenu.dark .myInfo .btnLogin {
+    background-color: #888;
+}
+
 #sideMenu .myInfo .btnList {
     display: flex;
     margin-top: 10px;
@@ -164,7 +168,7 @@
 }
 
 #sideMenu.dark .sideList li a {
-    color: #666666;
+    color: #888;
 }
 
 #sideMenu .sideList li .length {
@@ -183,7 +187,7 @@
 }
 
 #sideMenu.dark .sideList li .length {
-    background-color: #666666;
+    background-color: #888;
 }
 
 /* #sideMenu .sideList li .length:before {
@@ -207,7 +211,7 @@
 }
 
 #sideMenu.dark .sideList li a.active:after {
-    background-color: #666666;
+    background-color: #888;
 }
 
 .utilList {
@@ -230,7 +234,7 @@
 }
 
 #sideMenu.dark .utilList li button {
-    background-color: #666666;
+    background-color: #888;
 }
 
 .utilList li .btnTheme svg {
@@ -248,7 +252,7 @@
 
 #sideMenu.dark .utilList li .btnUser {
     color: #fff;
-    border-color: #666666;
+    border-color: #888;
 }
 
 @media all and (max-width : 1495px) {

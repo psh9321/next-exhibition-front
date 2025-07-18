@@ -17,8 +17,8 @@ export async function POST(req : NextRequest){
 
         const { resultCode, data, errMsg } = await API_SERVER_MEETING_DELETE(token, deleteId, seq) as MEETING_PROMISE_RESPONSE;
 
-        revalidateTag(process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string);
-        revalidateTag("promise");
+        await revalidateTag(process["env"]["NEXT_PUBLIC_QUERY_KEY_MEETING"] as string);
+        await revalidateTag("promise");
 
         return NextResponse.json(DataEncrypt({ resultCode, data, errMsg }), {status : 200})
     }

@@ -23,7 +23,7 @@ import { area } from '@/util/opts';
 
 import { API_SEND_EMAIL_AUTH, API_PHONE_CHECK, API_REGISTER_SUBMIT } from '@/api/account.client';
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 import { REGISTER_FORM_VALUE } from "@/types/account/register"
 
@@ -36,7 +36,7 @@ const RegisterPageView = () => {
 
     const [emailAuth, setEmailAuth] = useState<string>("");
 
-    const [currentIdx, setCurrentIdx] = useState<number>(3);
+    const [currentIdx, setCurrentIdx] = useState<number>(0);
 
     const [infoChapterMsg, setInfoChapterMsg] = useState<string>("");
 

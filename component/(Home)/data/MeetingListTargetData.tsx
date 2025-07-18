@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer"
 
 import { useLoadingView } from "@/hook/useLoadingView";
+import { useThemeStore } from "@/store/useThemeStore";
 
 import { fileUrl } from "@/util/opts";
 
@@ -17,9 +18,12 @@ import meetingListTargetStyles from "@/styles/(home)/meeting/meetingListTarget.m
 
 import { MEETING_EXHIBITION_TARGET_DATA, MEETING_EXHIBITION_TARGET_LIST_RESPONSE } from "@/types/meeting"
 
+
 const MeetingListTargetData = () => {
 
     const { LoadingElement, ShowLoadingView, HideLoadingView } = useLoadingView();
+
+    const { theme } = useThemeStore();
 
     const params = useParams();
 
@@ -78,7 +82,7 @@ const MeetingListTargetData = () => {
         <>
             <LoadingElement/>
 
-            <ul className={meetingListTargetStyles.meetingTargetList}>
+            <ul className={`${meetingListTargetStyles.meetingTargetList} ${meetingListTargetStyles[theme]}`}>
                 {
                     data && data.pages.length > 0 &&
                     data.pages.map(page => {

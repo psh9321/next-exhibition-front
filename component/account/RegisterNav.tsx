@@ -1,6 +1,6 @@
 "use client"
 
-import accountStyles from "@/styles/account.module.css"
+import accountStyles from "@/styles/account/account.module.css"
 
 const RegisterNav = ({ currentIdx } : { currentIdx : number }) => {
 
