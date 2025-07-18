@@ -1,5 +1,9 @@
-# 전시 + 緣 (전시와 사람 사이의 '인연') ver 0.0.0.1
+# 전시 + 緣 (전시와 사람 사이의 '인연') ver 0.0.0.2
 https://next-project01-pied.vercel.app
+
+## ver.2 (2025.07.18)
+ - 화면 테마 기능 추가 (다크모드, 라이트모드)
+ - 전시목록 스크롤 애니메이션 추가
 
 ## "전시 + 緣 (전시와 사람 사이의 '인연')" 이란?
 - 전시와 사람 사이의 '인연(결)' 이라는 뜻으로 전시 관람을 위한 모임 사이트 입니다. 
@@ -43,6 +47,11 @@ https://github.com/user-attachments/assets/399da627-2afc-4e0b-9d03-94a9a1f1ff99
 5. 1:1 메세지 기능
 >
 https://github.com/user-attachments/assets/9c50c4f6-2d18-4723-a705-f43ea2b82206
+
+6. 테마 기능
+>
+https://github.com/user-attachments/assets/e0122d7b-ca91-4325-bb29-4444585b90eb
+
 
 
  
