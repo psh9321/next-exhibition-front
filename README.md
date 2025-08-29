@@ -1,5 +1,5 @@
 # 전시 + 緣 (전시와 사람 사이의 '인연') ver 0.0.0.2
-~~`https://next-project01-pied.vercel.app`~~ (서비스 종료)
+~~`https://next-project01-pied.vercel.app`~~ (2025.08.29 서비스 종료)
 
 ## ver.2 (2025.07.18)
  - 화면 테마 기능 추가 (다크모드, 라이트모드)
