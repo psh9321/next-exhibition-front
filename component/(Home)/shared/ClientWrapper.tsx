@@ -1,6 +1,6 @@
 "use client"
 
-import { useLayoutEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useQueryClient } from "@tanstack/react-query"
 
 import Headers from "./Headers"
@@ -47,7 +47,7 @@ const ClientWrapper = ({children} : LAYOUT_CHILD) => {
 
     const messageClientQuery = queryClient.getQueryData([process["env"]["NEXT_PUBLIC_QUERY_KEY_MASSAGE"],"rooms"]) as MESSAGE_ROOM_RESPONSE_DATA[]
     
-    useLayoutEffect(() => {
+    useEffect(() => {
         
         InitTheme()
         
